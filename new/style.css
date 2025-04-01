@@ -1,0 +1,540 @@
+/* --- Base & Variables --- */
+:root {
+    --primary-glow: #00f2ff; /* Cyan/Aqua */
+    --secondary-glow: #ff00ff; /* Magenta */
+    --tertiary-glow: #faff00; /* Yellow */
+    --bg-color-start: #1a001a; /* Dark Purple */
+    --bg-color-end: #0d0d20;   /* Very Dark Blue/Indigo */
+    --panel-bg: rgba(10, 10, 25, 0.6); /* Slightly transparent dark panel */
+    --panel-border: rgba(0, 242, 255, 0.2);
+    --text-color: #e0e0e0;
+    --text-accent: #ffffff;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Roboto Mono', monospace;
+    --section-padding: 60px 20px; /* Padding for content sections */
+    --container-max-width: 1000px; /* Max width for content */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--bg-color-start), var(--bg-color-end));
+    background-attachment: fixed; /* Keep gradient fixed during scroll */
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+/* --- Background Effects (Fixed) --- */
+.scanlines, .vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicking through */
+    z-index: 1;
+}
+.scanlines {
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 4px,
+        rgba(255, 255, 255, 0.02) 5px,
+        rgba(255, 255, 255, 0.02) 6px
+    );
+    opacity: 0.6;
+}
+.vignette {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.7) 100%);
+    z-index: 2;
+}
+
+/* --- Landing Viewport Section --- */
+.landing-viewport {
+    min-height: 100vh; /* Takes full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 40px 20px;
+    position: relative; /* For scroll indicator positioning */
+    text-align: center;
+    z-index: 5; /* Above background effects */
+    overflow: hidden; /* Prevent content spillover affecting layout */
+}
+
+/* --- Initial Container (within Landing Viewport) --- */
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.1), inset 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-out;
+    position: relative; /* Needed for absolute positioning within */
+    z-index: 6; /* Above landing bg, below fixed elements if needed */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Hero Content (Same as before) --- */
+.hero-content { margin-bottom: 40px; }
+.neon-text {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    color: #fff;
+    text-shadow:
+        0 0 5px var(--primary-glow), 0 0 10px var(--primary-glow),
+        0 0 20px var(--primary-glow), 0 0 40px var(--secondary-glow),
+        0 0 80px var(--secondary-glow);
+    margin-bottom: 10px;
+    animation: pulseGlow 3s infinite alternate ease-in-out;
+}
+@keyframes pulseGlow { /* same as before */ }
+.tagline {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 400;
+    color: var(--primary-glow);
+    text-shadow: 0 0 5px var(--primary-glow);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.intro {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+/* --- Navigation (Same as before) --- */
+.main-nav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.nav-link {
+    font-family: var(--font-heading);
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    transition: color 0.3s ease, text-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-glow);
+    transition: width 0.3s ease-out;
+    box-shadow: 0 0 5px var(--secondary-glow);
+}
+.glow-on-hover:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--primary-glow);
+    border-color: rgba(0, 242, 255, 0.5);
+}
+.glow-on-hover:hover::before { width: 80%; }
+
+/* --- Scroll Down Indicator --- */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 40px; /* Increased height */
+    z-index: 10;
+}
+.scroll-down-indicator span {
+    display: block;
+    width: 2px; /* Thinner line */
+    height: 10px; /* Shorter line */
+    background-color: var(--primary-glow);
+    margin: 4px auto; /* Spacing */
+    animation: scrollAnim 1.5s infinite ease-out;
+    opacity: 0;
+    box-shadow: 0 0 5px var(--primary-glow);
+}
+.scroll-down-indicator span:nth-child(1) { animation-delay: 0s; }
+.scroll-down-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.scroll-down-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes scrollAnim {
+    0% { transform: translateY(-10px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0; }
+}
+
+
+/* --- Main Content Area --- */
+.main-content {
+    position: relative; /* Establish stacking context */
+    z-index: 5; /* Above background */
+}
+
+/* --- Content Sections --- */
+.content-section {
+    padding: var(--section-padding);
+    max-width: var(--container-max-width);
+    margin: 0 auto; /* Center the content block */
+    border-bottom: 1px dashed rgba(0, 242, 255, 0.15); /* Subtle separator */
+}
+.content-section:last-child {
+    border-bottom: none; /* No border on the last section */
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Add specific neon colors to section titles */
+.section-title.neon-primary {
+    color: var(--primary-glow);
+    text-shadow: 0 0 8px var(--primary-glow), 0 0 15px rgba(0, 242, 255, 0.5);
+}
+.section-title.neon-secondary {
+    color: var(--secondary-glow);
+    text-shadow: 0 0 8px var(--secondary-glow), 0 0 15px rgba(255, 0, 255, 0.5);
+}
+.section-title.neon-tertiary {
+    color: var(--tertiary-glow);
+    text-shadow: 0 0 8px var(--tertiary-glow), 0 0 15px rgba(250, 255, 0, 0.5);
+}
+
+.section-content {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.7;
+    color: #ccc;
+}
+.section-content p {
+    margin-bottom: 1.2em;
+}
+.section-content a {
+    color: var(--primary-glow);
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+.section-content a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px var(--primary-glow);
+}
+
+/* --- Project Section Specifics --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.project-card {
+    background: rgba(25, 0, 25, 0.4); /* Darker purple tint */
+    border: 1px solid rgba(255, 0, 255, 0.2); /* Magenta border */
+    padding: 25px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Contain the glow */
+}
+
+/* Subtle animated glow effect inside the card */
+.project-card-glow {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.15) 0%, rgba(255, 0, 255, 0) 70%);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    z-index: 0;
+    animation: rotateGlow 10s linear infinite paused; /* Paused initially */
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px var(--secondary-glow);
+}
+
+.project-card:hover .project-card-glow {
+    opacity: 1;
+    animation-play-state: running; /* Run animation on hover */
+}
+
+
+.project-card h4 {
+    font-family: var(--font-heading);
+    color: var(--secondary-glow);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    position: relative; /* Ensure text is above glow */
+    z-index: 1;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #bbb;
+     position: relative;
+    z-index: 1;
+}
+
+.project-link {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: bold;
+    color: var(--tertiary-glow) !important; /* Stand out link color */
+    text-decoration: none;
+    border-bottom: 1px dashed var(--tertiary-glow);
+    transition: color 0.3s, border-color 0.3s;
+     position: relative;
+    z-index: 1;
+}
+.project-link:hover {
+    color: #fff !important;
+    border-bottom-style: solid;
+    text-shadow: 0 0 5px var(--tertiary-glow);
+}
+
+/* --- About Section Specifics --- */
+.about-content {
+    max-width: 750px; /* Slightly narrower for readability */
+    margin: 0 auto;
+    text-align: center; /* Center align text */
+}
+.skill-tag {
+    display: inline-block;
+    background-color: rgba(0, 242, 255, 0.1);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    color: var(--primary-glow);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin: 3px;
+    white-space: nowrap;
+}
+
+/* --- Contact Section Specifics --- */
+.contact-content {
+    text-align: center;
+}
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center links */
+    gap: 15px; /* Space between links */
+}
+.contact-links li a {
+    font-size: 1.1rem;
+    /* Use glow-on-hover class for consistency */
+}
+
+/* --- Footer --- */
+.main-footer {
+    padding: 30px 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    margin-top: 40px; /* Space above footer */
+    position: relative;
+    z-index: 5;
+}
+
+/* --- Easter Egg 1: Glitch Toggle (Fixed Positioning) --- */
+.glitch-checkbox { display: none; }
+.glitch-trigger {
+    position: fixed; /* Changed from absolute */
+    bottom: 20px;   /* Adjust position */
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--tertiary-glow);
+    border-radius: 50%;
+    color: var(--tertiary-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 101; /* Ensure it's above content */
+    user-select: none;
+    text-shadow: 0 0 5px var(--tertiary-glow);
+}
+.glitch-trigger:hover {
+    background-color: rgba(255, 255, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--tertiary-glow);
+}
+
+/* Glitch Effect Styles (Apply to body or specific elements if needed) */
+/* We target the body now to potentially affect everything when scrolling */
+.glitch-checkbox:checked ~ body {
+     /* Apply mild shake/color shift to entire page? Or keep it on .container? */
+     /* Let's keep the main visual chaos contained initially */
+}
+/* Keep targeting container for main shake, but overlay/message are fixed */
+.glitch-checkbox:checked ~ .landing-viewport .container {
+    animation: shake 0.5s infinite;
+}
+.glitch-checkbox:checked ~ body {
+    /* Apply subtle global effect */
+     animation: colorShift 1s infinite alternate;
+}
+
+/* Overlay and Message are already fixed and cover viewport */
+.glitch-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background:
+        linear-gradient(rgba(255, 0, 0, 0.2) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.2) 50%, transparent 50%);
+    background-size: 10px 10px, 10px 10px;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.glitch-message {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: red;
+    text-shadow: 0 0 5px yellow, 0 0 10px blue;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 20px;
+    border: 1px solid red;
+    opacity: 0;
+    z-index: 110; /* Above trigger */
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    text-align: center;
+}
+
+/* Checked states reveal overlay/message */
+.glitch-checkbox:checked ~ .glitch-overlay,
+.glitch-checkbox:checked ~ .glitch-message {
+    opacity: 1;
+}
+.glitch-checkbox:checked ~ .glitch-message {
+    animation: glitchText 0.1s infinite steps(2, end);
+}
+
+/* Keyframes (shake, colorShift, glitchText) - Same as before */
+@keyframes shake { /* ... */ }
+@keyframes colorShift { /* ... */ }
+@keyframes glitchText { /* ... */ }
+
+
+/* --- Easter Egg 2: Hover Reveal (Fixed Positioning) --- */
+.secret-hover-area {
+    position: fixed; /* Changed from absolute */
+    bottom: 20px;   /* Adjust position */
+    left: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: default;
+    padding: 5px;
+    transition: color 0.3s ease;
+    user-select: none;
+    z-index: 101; /* Ensure it's above content */
+}
+.secret-hover-area .static-text {
+    font-weight: bold;
+    color: var(--tertiary-glow);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+.secret-hover-area .hidden-message {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    vertical-align: bottom;
+    transition: max-width 0.8s ease-out, opacity 0.5s ease-out 0.3s;
+    white-space: nowrap;
+    color: var(--primary-glow);
+}
+.secret-hover-area .hidden-message a {
+    color: inherit;
+    text-decoration: underline;
+    text-shadow: 0 0 5px var(--primary-glow);
+}
+.secret-hover-area:hover { color: rgba(255, 255, 255, 0.7); }
+.secret-hover-area:hover .static-text { opacity: 1; }
+.secret-hover-area:hover .hidden-message {
+    max-width: 250px; /* Adjust based on your text length */
+    opacity: 1;
+}
+
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 50px 15px;
+    }
+    .container { padding: 30px; }
+    .main-nav { gap: 15px; }
+    .glitch-trigger, .secret-hover-area {
+        bottom: 15px;
+        /* Adjust left/right if they overlap on small screens */
+    }
+    .glitch-trigger { right: 15px; width: 25px; height: 25px; font-size: 1rem;}
+    .secret-hover-area { left: 15px; font-size: 0.8rem;}
+    .glitch-message { font-size: 1.2rem; padding: 8px 15px; }
+    .project-grid { grid-template-columns: 1fr; /* Stack projects */ }
+}
+
+@media (max-width: 480px) {
+    body { /* Less padding overall if needed */ }
+    .landing-viewport { padding: 20px 10px; }
+    .container { padding: 20px; }
+    /* Font sizes already clamped */
+    .intro { font-size: 0.85rem; }
+    .main-nav { flex-direction: column; gap: 10px; align-items: center; }
+    .section-title { font-size: 1.6rem; }
+    .section-content { font-size: 0.9rem; }
+    .glitch-trigger, .secret-hover-area { bottom: 10px; }
+    .glitch-trigger { right: 10px; }
+    .secret-hover-area { left: 10px; }
+}
