@@ -1,4 +1,3 @@
-
 // Matrix Rain Effect
 function createMatrix() {
     const matrixBg = document.getElementById('matrixBg');
@@ -209,3 +208,5 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%cWelcome to Dean Reight\'s Portfolio', 'color: #00f2ff; font-size: 16px; font-weight: bold;');
     console.log('%cBuilt with ❤️ and lots of ☕', 'color: #ff00ff;');
 });
+
+
