@@ -859,3 +859,25 @@ body {
         --panel-border: rgba(255, 255, 255, 0.5);
     }
 }
+/* Styling for the image container within a project card */
+.project-image-container {
+    padding: 10px; /* Padding inside the container, giving space around the image */
+    background: rgba(0, 0, 0, 0.4); /* Darker background for the image section */
+    border-top: 1px solid var(--panel-border);
+    border-bottom: 1px solid var(--panel-border);
+    margin-bottom: 15px; /* Space between image container and project body */
+    overflow: hidden; /* Ensure nothing overflows if image has weird dimensions */
+    display: flex; /* To potentially center the image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if container has height */
+}
+
+/* Styling for the actual image */
+.project-ui-screenshot {
+    max-width: 100%; /* IMPORTANT: Makes the image scale down to fit its container */
+    height: auto;   /* IMPORTANT: Maintains the image's aspect ratio when scaling */
+    display: block; /* Removes extra space below the image */
+    border: 1px solid rgba(0, 242, 255, 0.3); /* A subtle border to match the theme */
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); /* A glowing effect */
+    border-radius: 4px; /* Slight rounding to match card elements */
+}
