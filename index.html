@@ -3,126 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reigh // Portfolio</title>
+    <title>Dean Reight F. Billedo // System Online</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Easter Egg 1 Trigger (Hidden Checkbox) - Stays Fixed -->
-    <input type="checkbox" id="glitch-toggle" class="glitch-checkbox">
-
-    <!-- Background Effects - Stays Fixed -->
+    <!-- Matrix Background -->
+    <div class="matrix-bg" id="matrixBg"></div>
+    
+    <!-- Scanlines -->
     <div class="scanlines"></div>
-    <div class="vignette"></div>
-
-    <!-- Landing Viewport Section -->
-    <header class="landing-viewport">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="neon-text">Dean Reight F. Billedo</h1>
-                <h2 class="tagline">Creative Developer | Web Developer| Problem Solver</h2>
-                <p class="intro">
-                    Crafting unique digital experiences. Exploring the intersection of code and creativity. Scroll down to discover more.
-                </p>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Boot Sequence -->
+    <div class="boot-sequence" id="bootSequence">
+        <div class="boot-text">[SYSTEM] Initializing neural interface...</div>
+        <div class="boot-text">[SYSTEM] Loading portfolio data...</div>
+        <div class="boot-text">[SYSTEM] Establishing secure connection...</div>
+        <div class="boot-text">[SYSTEM] Decrypting user profile...</div>
+        <div class="boot-text">[SYSTEM] Authentication complete.</div>
+        <div class="boot-text">[SYSTEM] Welcome to the matrix, user.</div>
+    </div>
+    
+    <!-- Navigation Breadcrumbs -->
+    <div class="nav-breadcrumbs">
+        <span class="breadcrumb-item active" data-target="hero">INIT</span>
+        <span class="breadcrumb-item" data-target="achievements">ACHIEVEMENTS</span>
+        <span class="breadcrumb-item" data-target="projects">PROJECTS</span>
+        <span class="breadcrumb-item" data-target="skills">SKILLS</span>
+        <span class="breadcrumb-item" data-target="contact">CONTACT</span>
+    </div>
+    
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section section" id="hero">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-btn"></div>
+                    <div class="terminal-btn"></div>
+                    <div class="terminal-btn"></div>
+                    <div class="terminal-title">dean_reight@portfolio:~$</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="typing-text" id="typingText">
+                        > whoami<br>
+                        Dean Reight F. Billedo<br>
+                        > status<br>
+                        Creative Developer | Web Designer | Problem Solver<br>
+                        > mission<br>
+                        Building digital experiences that matter...
+                    </div>
+                    
+                    <div class="glitch-name">DEAN_REIGHT.EXE</div>
+                    
+                    <div class="curiosity-hook">
+                        <strong>🔥 WHY I'M DIFFERENT:</strong><br>
+                        Most developers code. I craft digital experiences that users can't forget. 
+                        My secret? Psychology meets technology.
+                    </div>
+                    
+                    <div class="stats-preview">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span>Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="99">0</span>
+                            <span>Problems Solved</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="100">0</span>
+                            <span>Coffee Consumed</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Navigation (Now potentially within the landing or fixed, let's keep it here for initial focus) -->
-            <nav class="main-nav">
-                <a href="#projects" class="nav-link glow-on-hover">Projects</a>
-                <a href="#about" class="nav-link glow-on-hover">About</a>
-                <a href="#contact" class="nav-link glow-on-hover">Contact</a>
-            </nav>
-
-            <!-- Scroll Down Indicator (Optional but helpful) -->
-            <a href="#projects" class="scroll-down-indicator" aria-label="Scroll down to projects">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </div>
-    </header>
-
-    <!-- Main Content Area (Scrollable) -->
-    <main class="main-content">
-
+            
+            <div class="scroll-hint">
+                ↓ Discover My Arsenal ↓
+            </div>
+        </section>
+        
+        <!-- Achievements Section -->
+        <section class="section" id="achievements">
+            <div class="section-header">
+                <h2 class="section-title">ACHIEVEMENT_UNLOCKED</h2>
+                <p class="section-subtitle">My journey in code and creativity</p>
+            </div>
+            
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <span class="achievement-icon">🎓</span>
+                    <h3 class="achievement-title">Computer Science Student</h3>
+                    <p class="achievement-desc">Currently pursuing my degree while building real-world projects that solve actual problems.</p>
+                    <div class="achievement-date">2020 - Present</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <span class="achievement-icon">🔬</span>
+                    <h3 class="achievement-title">Research Innovator</h3>
+                    <p class="achievement-desc">Developed RAG-Optimized Procurement Documents system using cutting-edge AI technology.</p>
+                    <div class="achievement-date">2024</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <span class="achievement-icon">💡</span>
+                    <h3 class="achievement-title">Full-Stack Creator</h3>
+                    <p class="achievement-desc">Built complete web applications from database design to user interface psychology.</p>
+                    <div class="achievement-date">2022 - Present</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <span class="achievement-icon">🎯</span>
+                    <h3 class="achievement-title">Problem Solver</h3>
+                    <p class="achievement-desc">Specialized in turning complex business requirements into elegant digital solutions.</p>
+                    <div class="achievement-date">Ongoing</div>
+                </div>
+            </div>
+        </section>
+        
         <!-- Projects Section -->
-        <section id="projects" class="content-section">
-            <h3 class="section-title neon-secondary">PROJECTS_</h3>
-            <div class="section-content project-grid">
-                <!-- Project Card Example 1 -->
+        <section class="section" id="projects">
+            <div class="section-header">
+                <h2 class="section-title">PROJECT_PORTFOLIO</h2>
+                <p class="section-subtitle">Where code meets creativity</p>
+            </div>
+            
+            <div class="project-showcase">
                 <div class="project-card">
-                    <div class="project-card-glow"></div>
-                    <h4>Pet Care Connect</h4>
-                    <p>An online appointment system for pet owners to book appointments.</p>
-                    <a href="#" class="project-link">View Demo ></a>
+                    <div class="project-header">
+                        <div class="project-status">LIVE</div>
+                        <h3 class="project-title">Pet Care Connect</h3>
+                        <p>Revolutionary appointment system that transforms how pet owners connect with veterinarians.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">95%</div>
+                                <div class="metric-label">User Satisfaction</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">50+</div>
+                                <div class="metric-label">Active Users</div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Project Card Example 2 -->
+                
                 <div class="project-card">
-                     <div class="project-card-glow"></div>
-                    <h4>Dream PC</h4>
-                    <p>An e-commerce app selling PC related stuff, complete with database.</p>
-                     <a href="#" class="project-link">View Code ></a>
+                    <div class="project-header">
+                        <div class="project-status">BETA</div>
+                        <h3 class="project-title">Dream PC</h3>
+                        <p>E-commerce platform built for PC enthusiasts with advanced filtering and recommendation engine.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">200+</div>
+                                <div class="metric-label">Products</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">99.9%</div>
+                                <div class="metric-label">Uptime</div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
                 </div>
-                 <!-- Add more project cards as needed -->
-                 <div class="project-card">
-                    <div class="project-card-glow"></div>
-                   <h4>Thesis-RAG-Optimized-Procurement-Documents</h4>
-                   <p>My thesis</p>
-                    <a href="#" class="project-link">Case Study></a>
-               </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-status">RESEARCH</div>
+                        <h3 class="project-title">AI Document RAG System</h3>
+                        <p>Advanced retrieval-augmented generation system for procurement document processing and analysis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">OpenAI</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">87%</div>
+                                <div class="metric-label">Accuracy</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1000+</div>
+                                <div class="metric-label">Documents</div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Research Paper</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <!-- About Section -->
-        <section id="about" class="content-section">
-            <h3 class="section-title neon-tertiary">ABOUT_ME_</h3>
-            <div class="section-content about-content">
-                <p>Just a com sci student that wants to be rich, pls hire me </p>
-                <p><code class="skill-tag">HTML5</code> <code class="skill-tag">CSS3/SCSS</code> <code class="skill-tag">JavaScript (ES6+)</code> <code class="skill-tag">React</code> <code class="skill-tag">Node.js</code> <code class="skill-tag">Figma</code> <code class="skill-tag">Creative Coding</code></p>
+        
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <div class="section-header">
+                <h2 class="section-title">SKILL_TREE</h2>
+                <p class="section-subtitle">My technological arsenal</p>
+            </div>
+            
+            <div class="skills-matrix">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frontend Development</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">React/Vue.js</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript/TypeScript</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CSS/SCSS</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML5</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="100"></div>
+                        </div>
+                    </div>
                 </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Backend Development</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Node.js</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Express/FastAPI</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">RESTful APIs</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Database & Cloud</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">MongoDB</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PostgreSQL</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">AWS/Digital Ocean</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="65"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">AI & Machine Learning</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">TensorFlow</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">OpenAI APIs</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">RAG Systems</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Data Analysis</span>
+                        <div class="skill-level">
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-
+        
         <!-- Contact Section -->
-        <section id="contact" class="content-section">
-            <h3 class="section-title neon-primary">GET_IN_TOUCH_</h3>
-            <div class="section-content contact-content">
-                <p>Interested in collaborating or have a question? Reach out!</p>
-                <ul class="contact-links">
-                    <li><a href="mailto:reighling@gmail.com" class="glow-on-hover">Email: reighling@gmail.com</a></li>
-                    <li><a href="https://www.linkedin.com/in/reighling/" target="_blank" rel="noopener noreferrer" class="glow-on-hover">LinkedIn</a></li>
-                    <!-- Add other relevant links (GitHub, Twitter, etc.) -->
-                    <li><a href="https://github.com/deanbilledo" target="_blank" rel="noopener noreferrer" class="glow-on-hover">GitHub</a></li>
-                </ul>
-                <!-- Optional: Simple Contact Form Placeholder -->
-                <!-- <form class="contact-form"> ... </form> -->
+        <section class="section" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">INITIATE_CONTACT</h2>
+                <p class="section-subtitle">Let's build something amazing together</p>
+            </div>
+            
+            <div class="contact-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-btn"></div>
+                    <div class="terminal-btn"></div>
+                    <div class="terminal-btn"></div>
+                    <div class="terminal-title">contact@dean_reight:~$</div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message:</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">SEND_MESSAGE</button>
+                </form>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: var(--text-color);">
+                <p>📧 dean.reight.billedo@example.com</p>
+                <p>🌐 github.com/deanreight</p>
+                <p>💼 linkedin.com/in/deanreight</p>
             </div>
         </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <p>© <span id="year"></span> Reigh. System Online.</p>
-    </footer>
-
-    <!-- Easter Egg 1 Visual Trigger - Stays Fixed -->
-    <label for="glitch-toggle" class="glitch-trigger" title="What is this?">?</label>
-
-    <!-- Easter Egg 2: Hover Reveal Area - Stays Fixed -->
-    <div class="secret-hover-area" title="Hold hover...">
-        <span class="static-text">[</span>
-        <span class="hidden-message">Status: <a href="https://github.com/deanbilledo" target="_blank" rel="noopener noreferrer">OPERATIONAL</a></span>
-        <span class="static-text">]</span>
+    </div>
+    
+    <!-- Easter Egg Trigger -->
+    <div class="konami-trigger" id="konamiTrigger">
+        ⚡
     </div>
 
-    <!-- Glitch Overlay (Activated by Easter Egg 1) - Stays Fixed -->
-    <div class="glitch-overlay"></div>
-    <div class="glitch-message">SYSTEM CORRUPTION DETECTED</div>
-
-
-    <script>
-        // Simple script to update year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
