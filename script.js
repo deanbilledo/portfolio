@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         typingTextElement.innerHTML = ''; // Clear initial text
         typeWriter();
-    }, 5500); // 4s for fadeOut + 1.5s additional delay
+    }, 3000); // 4s for fadeOut + 1.5s additional delay
 
     // Observe the skills section for animation
     const skillsSection = document.getElementById('skills');
@@ -201,9 +201,22 @@ navBreadcrumbs.addEventListener('click', (e) => {
 });
 
 // Trigger on click for trigger element
-konamiTrigger.addEventListener('click', () => {
-    alert('Hint: A legendary sequence of keys. Try "Up, Up, Down, Down, Left, Right, Left, Right, B, A".');
+
+document.querySelector('.konami-trigger').addEventListener('click', () => {
+  document.getElementById('popup').style.display = 'block';
 });
+
+document.querySelector('.close-btn').addEventListener('click', () => {
+  document.getElementById('popup').style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target.id === 'popup') {
+    document.getElementById('popup').style.display = 'none';
+  }
+});
+
+
 
 // --- Contact Form Submission ---
 document.addEventListener('DOMContentLoaded', () => {
