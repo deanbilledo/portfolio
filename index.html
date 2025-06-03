@@ -224,7 +224,6 @@
                     });
                     </script>
 
-
                     <div class="project-body">
                         <p class="project-desc">Our thesis project focuses on developing an offline-capable system that allows users to search and analyze public procurement documents 
                                                 in PDF format using Artificial Intelligence. It uses a technique called Retrieval-Augmented Generation (RAG) combined with optimized 
@@ -236,6 +235,7 @@
                             <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source Code</a>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -244,20 +244,68 @@
                 <div class="project-card">
                     <div class="project-header">
                         <span class="project-status completed">Completed</span>
-                        <h3 class="project-title">Pet Care Connect</h3>
+                        <h3 class="project-title">DreamPC</h3>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">Hostinger</span>
+                            <span class="tech-tag">PHP</span>
                         </div>
                     </div>
 
                 <!-- image placeholder-->
                     <div class="project-image-container">
-                        <img src="images/petcareconnect.jpg" alt="UI Screenshot of RAG Procurement System" class="project-ui-screenshot">
-                    </div>
+                        <img src="images/pcc1.jpg" alt="UI Screenshot of Pet Care Connect System" class="project-ui-screenshot" id="petcareImage" style="cursor: pointer;">
+                </div>
+
+                <script>
+                    // Shuffle through different Pet Care Connect images
+                    const petcareImages = [
+                        'images/pcc1.jpg',
+                        'images/pcc2.jpg',
+                        'images/pcc3.jpg',   
+                        'images/pcc4.jpg',
+                        'images/pcc5.jpg'
+                    ];
+
+                    let currentPetcareIndex = 0;
+                    const petcareImg = document.getElementById('petcareImage');
+                    let petcareImageInterval = null;
+                    let petcareShuffleStarted = false;
+
+                    function shufflePetcareImage() {
+                        currentPetcareIndex = (currentPetcareIndex + 1) % petcareImages.length;
+                        petcareImg.src = petcareImages[currentPetcareIndex];
+                    }
+
+                    function startPetcareShuffling() {
+                        if (!petcareShuffleStarted) {
+                            petcareShuffleStarted = true;
+                            petcareImageInterval = setInterval(shufflePetcareImage, 3000);
+                        }
+                    }
+
+                    // Create intersection observer to detect when image is visible
+                    const petcareObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                startPetcareShuffling();
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    // Start observing the Pet Care Connect image
+                    petcareObserver.observe(petcareImg);
+
+                    // Add click event to change image manually
+                    petcareImg.addEventListener('click', function() {
+                        startPetcareShuffling();
+                        shufflePetcareImage();
+                        // Reset the interval to prevent double changes
+                        clearInterval(petcareImageInterval);
+                        petcareImageInterval = setInterval(shufflePetcareImage, 3000);
+                    });
+                </script>
 
                     <div class="project-body">
                         <p class="project-desc">Pet Care Connect is a web-based platform that connects pet owners with local veterinary and grooming services 
@@ -273,6 +321,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- dreampc project -->
             <div class="project-showcase">
