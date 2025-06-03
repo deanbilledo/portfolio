@@ -145,13 +145,14 @@
             </div>
         </section>
 
-        <!-- Thesis project -->
+        <!--  project -->
         <section class="section" id="projects">
             <div class="section-header">
                 <h2 class="section-title">PROJECT_DIRECTORY</h2>
                 <p class="section-subtitle">Notable system builds and experiments</p>
             </div>
-            
+
+            <!-- Thesis project -->
             <div class="project-showcase">
                 <div class="project-card">
                     <div class="project-header">
@@ -168,9 +169,61 @@
                     </div>
 
                 <!-- image placeholder-->
-                    <div class="project-image-container">
-                        <img src="images/thesis.png" alt="UI Screenshot of RAG Procurement System" class="project-ui-screenshot">
+                   <div class="project-image-container">
+                        <img src="images/thesis1.png" alt="UI Screenshot of Thesis RAG System" class="project-ui-screenshot" id="thesisImage" style="cursor: pointer;">
                     </div>
+
+                    <script>
+                    // Shuffle through different thesis images
+                    const thesisImages = [
+                        'images/thesis1.png',
+                        'images/thesis2.png',
+                        'images/thesis3.png',   
+                        'images/thesis4.png',
+                        'images/thesis5.png',
+                        'images/thesis6.png',
+                        'images/thesis7.png',
+                    ];
+
+                    let currentThesisIndex = 0;
+                    const thesisImg = document.getElementById('thesisImage');
+                    let thesisImageInterval = null;
+                    let thesisShuffleStarted = false;
+
+                    function shuffleThesisImage() {
+                        currentThesisIndex = (currentThesisIndex + 1) % thesisImages.length;
+                        thesisImg.src = thesisImages[currentThesisIndex];
+                    }
+
+                    function startThesisShuffling() {
+                        if (!thesisShuffleStarted) {
+                            thesisShuffleStarted = true;
+                            thesisImageInterval = setInterval(shuffleThesisImage, 3000);
+                        }
+                    }
+
+                    // Create intersection observer to detect when image is visible
+                    const thesisObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                startThesisShuffling();
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    // Start observing the thesis image
+                    thesisObserver.observe(thesisImg);
+
+                    // Add click event to change image manually
+                    thesisImg.addEventListener('click', function() {
+                        startThesisShuffling();
+                        shuffleThesisImage();
+                        // Reset the interval to prevent double changes
+                        clearInterval(thesisImageInterval);
+                        thesisImageInterval = setInterval(shuffleThesisImage, 3000);
+                    });
+                    </script>
+
 
                     <div class="project-body">
                         <p class="project-desc">Our thesis project focuses on developing an offline-capable system that allows users to search and analyze public procurement documents 
@@ -207,11 +260,96 @@
                     </div>
 
                     <div class="project-body">
-                        <p class="project-desc">Our thesis project focuses on developing an offline-capable system that allows users to search and analyze public procurement documents 
-                                                in PDF format using Artificial Intelligence. It uses a technique called Retrieval-Augmented Generation (RAG) combined with optimized 
-                                                Small Language Models (SLMs) to accurately answer questions based on the content of local government documents, even without internet access. 
-                                                The system is built as a Progressive Web App (PWA), enabling efficient, private, and accurate document querying tailored for resource-limited 
-                                                government institutions.</p>
+                        <p class="project-desc">Pet Care Connect is a web-based platform that connects pet owners with local veterinary and grooming services 
+                            through a centralized, user-friendly appointment system. The platform allows pet owners to book services, manage pet health records, 
+                            receive reminders, and communicate with service providers. For pet shops, it offers tools to manage appointments, staff schedules, 
+                            services, and customer interactions. Administrators can oversee the entire platform, including user analytics, financial reports, 
+                            and system settings. The system is designed to improve service accessibility, support local businesses, and streamline pet care 
+                            through automation, real-time updates, and location-based service discovery.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">View Demo</a>
+                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dreampc project -->
+            <div class="project-showcase">
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-status completed">Completed</span>
+                        <h3 class="project-title">DreamPC</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                    </div>
+
+                <!-- image placeholder-->
+                    <div class="project-image-container">
+                        <img src="images/dream1.png" alt="UI Screenshot of DreamPC System" class="project-ui-screenshot" id="dreampcImage" style="cursor: pointer;">
+                    </div>
+
+                    <script>
+                    // Shuffle through different DreamPC images
+                    const dreampcImages = [
+                        'images/dream1.png',
+                        'images/dream2.png',
+                        'images/dream3.png',
+                        'images/dream4.png',
+                        'images/dream5.png',
+                        'images/dream6.png'
+                    ];
+
+                    let currentDreampcIndex = 0;
+                    const dreampcImg = document.getElementById('dreampcImage');
+                    let dreampcImageInterval = null;
+                    let dreampcShuffleStarted = false;
+
+                    function shuffleDreampcImage() {
+                        currentDreampcIndex = (currentDreampcIndex + 1) % dreampcImages.length;
+                        dreampcImg.src = dreampcImages[currentDreampcIndex];
+                    }
+
+                    function startDreampcShuffling() {
+                        if (!dreampcShuffleStarted) {
+                            dreampcShuffleStarted = true;
+                            dreampcImageInterval = setInterval(shuffleDreampcImage, 3000);
+                        }
+                    }
+
+                    // Create intersection observer to detect when image is visible
+                    const dreampcObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                startDreampcShuffling();
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    // Start observing the DreamPC image
+                    dreampcObserver.observe(dreampcImg);
+
+                    // Add click event to change image manually
+                    dreampcImg.addEventListener('click', function() {
+                        startDreampcShuffling();
+                        shuffleDreampcImage();
+                        // Reset the interval to prevent double changes
+                        clearInterval(dreampcImageInterval);
+                        dreampcImageInterval = setInterval(shuffleDreampcImage, 3000);
+                    });
+                    </script>
+
+                    <div class="project-body">
+                        <p class="project-desc">Pet Care Connect is a web-based platform that connects pet owners with local veterinary and grooming services 
+                            through a centralized, user-friendly appointment system. The platform allows pet owners to book services, manage pet health records, 
+                            receive reminders, and communicate with service providers. For pet shops, it offers tools to manage appointments, staff schedules, 
+                            services, and customer interactions. Administrators can oversee the entire platform, including user analytics, financial reports, 
+                            and system settings. The system is designed to improve service accessibility, support local businesses, and streamline pet care 
+                            through automation, real-time updates, and location-based service discovery.</p>
                         <div class="project-links">
                             <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">View Demo</a>
                             <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source Code</a>
