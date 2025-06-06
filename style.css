@@ -1,3 +1,4 @@
+
 /* CSS Custom Properties */
 :root {
     /* Light Mode Colors */
@@ -1314,5 +1315,83 @@ body {
         padding: 8px 12px;
         font-size: 0.8rem;
         width: fit-content;
+    }
+}
+
+/* Floating Background Animation */
+/* Update Floating Background Animation */
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    pointer-events: none;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.floating-particle {
+    position: absolute;
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    animation: float-up linear infinite;
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.1s ease-out;
+    transform: translateZ(0);
+}
+
+/* Light mode particles - updated for better visibility and subtlety */
+.light-mode .floating-particle {
+    background: linear-gradient(135deg, rgba(0, 122, 255), rgba(102, 126, 234));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode particles - updated for better visibility and subtlety */
+.dark-mode .floating-particle {
+    background: linear-gradient(135deg, rgba(0, 122, 255), rgba(102, 126, 234));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Float animation */
+@keyframes float-up {
+    0% {
+        transform: translateY(110vh) translateX(var(--x-move)) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: var(--opacity);
+    }
+    90% {
+        opacity: var(--opacity);
+    }
+    100% {
+        transform: translateY(-10vh) translateX(var(--x-end)) rotate(var(--rotation));
+        opacity: 0;
+    }
+}
+
+/* Enhanced glassmorphism for existing elements */
+.bento-card, 
+.project-card, 
+.skill-category, 
+.contact-form,
+.mac-window,
+.metric-card,
+.hero-bio {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Accessibility - disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .floating-particle {
+        display: none;
     }
 }

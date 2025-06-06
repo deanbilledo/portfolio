@@ -89,7 +89,7 @@ function animateSkills() {
         observer.observe(skillsSection);
     }
 }
-// Project Image Cycling
+// Project Image Cycling with Smooth Fade Transitions
 function initProjectImageCycling() {
     // Thesis project images
     const thesisImages = [
@@ -139,13 +139,41 @@ function initProjectImageCycling() {
         
         let currentIndex = 0;
         let interval;
+        let isTransitioning = false;
+        
+        // Preload images for smooth transitions
+        const preloadedImages = imageArray.map(src => {
+            const img = new Image();
+            img.src = src;
+            return img;
+        });
+        
+        const fadeToNextImage = () => {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            const nextIndex = (currentIndex + 1) % imageArray.length;
+            const nextSrc = imageArray[nextIndex];
+            
+            // Fade out current image
+            imageElement.style.opacity = '0';
+            
+            // Wait for fade out, then change source and fade in
+            setTimeout(() => {
+                imageElement.src = nextSrc;
+                currentIndex = nextIndex;
+                
+                // Fade in new image
+                setTimeout(() => {
+                    imageElement.style.opacity = '1';
+                    isTransitioning = false;
+                }, 50); // Small delay to ensure image has loaded
+            }, 300); // Match CSS transition duration
+        };
         
         const startCycling = () => {
             if (!interval) {
-                interval = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % imageArray.length;
-                    imageElement.src = imageArray[currentIndex];
-                }, 3000);
+                interval = setInterval(fadeToNextImage, 3500); // Slightly longer to account for transition
             }
         };
         
@@ -155,6 +183,11 @@ function initProjectImageCycling() {
                 interval = null;
             }
         };
+        
+        // Add CSS transition if not already present
+        if (!imageElement.style.transition) {
+            imageElement.style.transition = 'opacity 0.3s ease-in-out';
+        }
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -168,19 +201,30 @@ function initProjectImageCycling() {
         
         observer.observe(imageElement);
         
-        // Manual image cycling on click
-        imageElement.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % imageArray.length;
-            imageElement.src = imageArray[currentIndex];
+        // Manual image cycling on click with fade effect
+        imageElement.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isTransitioning) {
+                fadeToNextImage();
+            }
         });
         
         // Handle image load errors
         imageElement.addEventListener('error', () => {
             console.warn(`Failed to load image: ${imageElement.src}`);
             // Try next image in array
-            currentIndex = (currentIndex + 1) % imageArray.length;
-            if (currentIndex !== 0) { // Prevent infinite loop
-                imageElement.src = imageArray[currentIndex];
+            if (!isTransitioning) {
+                currentIndex = (currentIndex + 1) % imageArray.length;
+                if (currentIndex !== 0) { // Prevent infinite loop
+                    fadeToNextImage();
+                }
+            }
+        });
+        
+        // Ensure smooth loading on page load
+        imageElement.addEventListener('load', () => {
+            if (imageElement.style.opacity === '') {
+                imageElement.style.opacity = '1';
             }
         });
     }
@@ -196,6 +240,7 @@ function initProjectImageCycling() {
     if (dreampcImg) cycleImages(dreampcImg, dreampcImages);
     if (cyberpunkImg) cycleImages(cyberpunkImg, cyberpunkImages);
 }
+
 
 // Contact Form
 function initContactForm() {
@@ -308,3 +353,177 @@ window.addEventListener('scroll', throttle(() => {
 window.addEventListener('resize', throttle(() => {
     updateProgressBar();
 }, 250));
+
+
+// Interactive Background Animation
+function initBackgroundAnimation() {
+    // Create container for animation
+    const bgAnimation = document.createElement('div');
+    bgAnimation.className = 'bg-animation';
+    document.body.prepend(bgAnimation);
+    
+    // Configuration
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 10 : 18;
+    const sizes = isMobile ? [40, 60, 80] : [60, 100, 140, 180];
+    const depthLevels = [20, 40, 60, 80]; // Z-depth for parallax effect
+    
+    // Tracking variables for interaction
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetMouseX = 0;
+    let targetMouseY = 0;
+    let deviceBeta = 0; // For mobile tilt (forward/backward)
+    let deviceGamma = 0; // For mobile tilt (left/right)
+    
+    // Track all particles for animation
+    const particles = [];
+    
+    // Create initial particles
+    for (let i = 0; i < particleCount; i++) {
+        const particle = createParticle(bgAnimation, sizes, depthLevels);
+        particles.push(particle);
+    }
+    
+    // Mouse movement listener for desktop
+    document.addEventListener('mousemove', (e) => {
+        targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2; // -1 to 1
+        targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2; // -1 to 1
+    });
+    
+    // Device orientation for mobile
+    window.addEventListener('deviceorientation', (e) => {
+        // Beta: front/back tilt from -180 to 180
+        // Gamma: left/right tilt from -90 to 90
+        if (e.beta !== null && e.gamma !== null) {
+            deviceBeta = Math.min(Math.max(e.beta, -45), 45) / 45; // Normalize to -1 to 1
+            deviceGamma = Math.min(Math.max(e.gamma, -45), 45) / 45; // Normalize to -1 to 1
+        }
+    });
+    
+    // Smooth animation for mouse/device movement
+    function updateParticlePositions() {
+        // Smooth mouse movement (easing)
+        mouseX += (targetMouseX - mouseX) * 0.05;
+        mouseY += (targetMouseY - mouseY) * 0.05;
+        
+        // Get interaction values (either mouse or device orientation)
+        const interactX = isMobile ? deviceGamma : mouseX;
+        const interactY = isMobile ? deviceBeta : mouseY;
+        
+        // Apply to each particle
+        particles.forEach(particle => {
+            const { element, depth } = particle;
+            if (element && element.parentNode) {
+                // Calculate movement based on depth (deeper = more movement)
+                const moveX = interactX * (depth / 20); // Adjust divisor for sensitivity
+                const moveY = interactY * (depth / 20);
+                
+                // Apply parallax effect
+                element.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+            }
+        });
+        
+        requestAnimationFrame(updateParticlePositions);
+    }
+    
+    // Start the animation loop
+    updateParticlePositions();
+    
+    // Periodically create new particles
+    setInterval(() => {
+        if (document.body.contains(bgAnimation) && particles.length < particleCount + 3) {
+            const particle = createParticle(bgAnimation, sizes, depthLevels);
+            particles.push(particle);
+            
+            // Clean up removed particles from array
+            for (let i = particles.length - 1; i >= 0; i--) {
+                if (!particles[i].element.parentNode) {
+                    particles.splice(i, 1);
+                }
+            }
+        }
+    }, 3000);
+    
+    // Handle resize
+    window.addEventListener('resize', () => {
+        const newIsMobile = window.innerWidth < 768;
+        if (newIsMobile !== isMobile) {
+            // Refresh if switching between mobile/desktop
+            while (bgAnimation.firstChild) {
+                bgAnimation.firstChild.remove();
+            }
+            particles.length = 0;
+            
+            // Create new particles with appropriate sizes
+            const newSizes = newIsMobile ? [40, 60, 80] : [60, 100, 140, 180];
+            const newCount = newIsMobile ? 10 : 18;
+            
+            for (let i = 0; i < newCount; i++) {
+                const particle = createParticle(bgAnimation, newSizes, depthLevels);
+                particles.push(particle);
+            }
+        }
+    });
+}
+
+function createParticle(container, sizes, depthLevels) {
+    const particle = document.createElement('div');
+    particle.className = 'floating-particle';
+    
+    // Random size
+    const size = sizes[Math.floor(Math.random() * sizes.length)];
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    
+    // Random position
+    particle.style.left = `${Math.random() * 100}%`;
+    
+    // Random depth for parallax effect
+    const depth = depthLevels[Math.floor(Math.random() * depthLevels.length)];
+    
+    // Animation properties
+    const duration = 20 + Math.random() * 40; // 20-60s
+    const xMove = (Math.random() - 0.5) * 150; // -75px to 75px
+    const xEnd = (Math.random() - 0.5) * 150; // -75px to 75px
+    const rotation = Math.random() * 360; // 0-360deg
+    const opacity = 0.05 + Math.random() * 0.15; // 0.05-0.2 (more subtle)
+    
+    // Set custom properties for animation
+    particle.style.setProperty('--x-move', `${xMove}px`);
+    particle.style.setProperty('--x-end', `${xEnd}px`);
+    particle.style.setProperty('--rotation', `${rotation}deg`);
+    particle.style.setProperty('--opacity', opacity);
+    
+    // Set animation
+    particle.style.animationDuration = `${duration}s`;
+    particle.style.animationDelay = `${Math.random() * 5}s`;
+    
+    // Add to container
+    container.appendChild(particle);
+    
+    // Store the particle object with its element and depth
+    const particleObj = {
+        element: particle,
+        depth: depth
+    };
+    
+    // Remove after animation completes
+    setTimeout(() => {
+        if (particle.parentNode) {
+            particle.remove();
+        }
+    }, (duration + 5) * 1000);
+    
+    return particleObj;
+}
+
+// Initialize the animation with your other initializations
+document.addEventListener('DOMContentLoaded', () => {
+    // Your existing initializations
+    initTheme();
+    // ... other initializations
+    
+    // Add our interactive background
+    initBackgroundAnimation();
+});
