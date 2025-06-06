@@ -501,3 +501,56 @@ function initBackgroundAnimation() {
     
     console.log(`Background animation initialized with ${particleCount} particles`);
 }
+
+// Scroll to Top Button
+function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    if (!scrollToTopBtn) {
+        console.warn('Scroll to top button not found');
+        return;
+    }
+    
+    // Show/hide button based on scroll position
+    function toggleScrollButton() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 300) { // Show after scrolling 300px
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    }
+    
+    // Smooth scroll to top
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Event listeners
+    window.addEventListener('scroll', throttle(toggleScrollButton, 100));
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    
+    // Initial check
+    toggleScrollButton();
+}
+
+// Update your existing DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initSmoothScrolling();
+    animateSkills();
+    initProjectImageCycling();
+    initContactForm();
+    initScrollAnimations();
+    initBackgroundAnimation();
+    initScrollToTop(); // Add this line
+    
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+});
+
+

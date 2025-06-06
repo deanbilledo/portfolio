@@ -40,7 +40,7 @@
 
 /* Dark Mode Colors */
 .dark-mode {
-    --bg-primary: #000000;
+    --bg-primary: #121212;
     --bg-secondary: #1C1C1E;
     --bg-tertiary: #2C2C2E;
     --bg-card: rgba(28, 28, 30, 0.8);
@@ -1318,7 +1318,7 @@ body {
     }
 }
 
-/* Simple Idle Background Animation */
+/* Parallax Background Animation */
 .bg-animation {
     position: fixed;
     top: 0;
@@ -1328,83 +1328,86 @@ body {
     z-index: -10;
     pointer-events: none;
     overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .idle-particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
     border-radius: 50%;
     opacity: 0.6;
     transition: all 0.3s ease;
     will-change: transform;
+    transform-style: preserve-3d;
+}
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
 }
 
-/* Light mode particles */
-.light-mode .idle-particle {
-    background: rgba(0, 122, 255, 0.8);
-    box-shadow: 0 0 10px rgba(0, 122, 255, 0.3);
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-/* Dark mode particles */
-.dark-mode .idle-particle {
-    background: rgba(0, 122, 255, 0.9);
-    box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
+.scroll-to-top:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
 }
 
-/* Idle floating animation */
-@keyframes idle-float {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px);
-    }
-    25% {
-        transform: translateY(-20px) translateX(10px);
-    }
-    50% {
-        transform: translateY(0px) translateX(-10px);
-    }
-    75% {
-        transform: translateY(20px) translateX(5px);
-    }
+.scroll-to-top:active {
+    transform: translateY(-2px);
 }
 
-.idle-particle {
-    animation: idle-float 8s ease-in-out infinite;
+/* Dark mode adjustments */
+.dark-mode .scroll-to-top {
+    background: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Mouse interaction effects */
-.particle-hover {
-    transform: scale(3) !important;
-    opacity: 1 !important;
-    box-shadow: 0 0 25px currentColor !important;
+.dark-mode .scroll-to-top:hover {
+    background: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Enhanced glassmorphism for cards */
-.bento-card, 
-.project-card, 
-.skill-category, 
-.contact-form,
-.mac-window,
-.metric-card {
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    .idle-particle {
-        animation: none !important;
-        display: none !important;
-    }
-    .bg-animation {
-        display: none !important;
-    }
-}
-
-/* Mobile optimization */
+/* Responsive design */
 @media (max-width: 768px) {
-    .idle-particle {
-        width: 3px;
-        height: 3px;
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
