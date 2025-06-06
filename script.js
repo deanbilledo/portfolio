@@ -379,7 +379,7 @@ function initBackgroundAnimation() {
     
     // Configuration
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 20 : 40;
+    const particleCount = isMobile ? 60 : 120;
     const particles = [];
     
     // Device orientation tracking for mobile
