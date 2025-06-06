@@ -6,624 +6,398 @@
     <title>Dean Reight F. Billedo // Portfolio</title>
     <link rel="icon" href="images/favicon.ico.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-
 </head>
-<body>
-    <!-- Matrix Background -->
-    <div class="matrix-bg" id="matrixBg"></div>
-    
-    <!-- Scanlines -->
-    <div class="scanlines"></div>
-    
+<body class="light-mode">
     <!-- Progress Bar -->
     <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
     </div>
     
-    <!-- Boot Sequence -->
-    <div class="boot-sequence" id="bootSequence">
-        <div class="boot-text">[SYSTEM] Initializing neural interface...</div>
-        <div class="boot-text">[SYSTEM] Loading portfolio data...</div>
-        <div class="boot-text">[SYSTEM] Establishing secure connection...</div>
-        <div class="boot-text">[SYSTEM] Decrypting user profile...</div>
-        <div class="boot-text">[SYSTEM] Authentication complete.</div>
-        <div class="boot-text">[SYSTEM] Welcome to the matrix, user.</div>
-    </div>
-    
-    <!-- Navigation Breadcrumbs -->
-    <div class="nav-breadcrumbs">
-        <span class="breadcrumb-item active" data-target="hero">INIT</span>
-        <span class="breadcrumb-item" data-target="achievements">ACHIEVEMENTS</span>
-        <span class="breadcrumb-item" data-target="projects">PROJECTS</span>
-        <span class="breadcrumb-item" data-target="skills">SKILLS</span>
-        <span class="breadcrumb-item" data-target="contact">CONTACT</span>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Dean Reight</div>
+             <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#achievements" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
     
     <div class="main-container">
         <!-- Hero Section -->
-        <section class="hero-section section" id="hero">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-title">dean_reight@portfolio:~$</div>
-                </div>
-                <div class="terminal-content">
-                    <div class="typing-text" id="typingText">
-                        > whoami<br>
-                        Dean Reight F. Billedo<br>
-                        > status<br>
-                        Online<br>
-                        > mission<br>
-                        Just keep learning
+     <section class="hero-section section" id="hero">
+            <div class="hero-content">
+                <div class="mac-window">
+                    <div class="mac-titlebar">
+                        <div class="mac-controls">
+                            <div class="mac-control close"></div>
+                            <div class="mac-control minimize"></div>
+                            <div class="mac-control maximize"></div>
+                        </div>
+                        <div class="mac-title">Dean Reight F. Billedo — Portfolio</div>
                     </div>
                     
-                    <div class="glitch-name">DEAN_REIGHT_F._BILLEDO</div>
-                    
-                    <div class="stats-preview">
-                        <div class="stat-item">
-                            <span>💻 Problem-Solver</span>
-                            
+                    <div class="mac-content">
+                        <div class="terminal-header">
+                            <span class="terminal-prompt">dean@portfolio</span>
+                            <span class="terminal-path">~/Documents/Portfolio</span>
                         </div>
-                        <div class="stat-item">
-                            <span>🧠 Innovative</span>
+                        
+                        <div class="hero-text">
+                            <h1 class="hero-name">Dean Reight F. Billedo</h1>
+                            <p class="hero-tagline">Computer Science Student & Developer</p>
+                            <p class="hero-description">$ echo "Just keep learning"<span class="typing-cursor"></span></p>
                         </div>
-                        <div class="stat-item">
-                            <span>✨ Persistent</span>
+                        
+                        <div class="hero-metrics">
+                            <div class="metric-card">
+                                <div class="metric-icon">🧩</div>
+                                <div class="metric-label">Problem Solver</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">💡</div>
+                                <div class="metric-label">Innovative</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">🎯</div>
+                                <div class="metric-label">Persistent</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-bio">
+                            <p>Hello I am Dean, a computer science student at Western Mindanao State University. 
+                            I like to sleep a lot, I also want to play games, and I like to learn interesting things.</p>
                         </div>
                     </div>
-
-                    <div class="curiosity-hook">
-                        <strong>🔥 DA GOAT:</strong><br>
-                        Hello I am Dean a computer science student at Western Mindanao State University, 
-                        I like to sleep a lot, I also want to play games, and I like to learn interesting things.
-                    </div>
-                    
                 </div>
             </div>
-            
-            <div class="scroll-hint">
-                ↓ Discover My Arsenal ↓
-            </div>
-
         </section>
         
-        <!-- Achievements Section -->
+         <!-- About Section -->
         <section class="section" id="achievements">
             <div class="section-header">
-                <h2 class="section-title">ACHIEVEMENT_UNLOCKED</h2>
-                <p class="section-subtitle">My journey in code and creativity</p>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Getting to know Dean beyond the code</p>
             </div>
             
-            <div class="achievement-grid">
-                <div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
+            <div class="bento-grid">
+                <div class="bento-card large">
+                    <div class="bento-content">
+                        <span class="bento-icon">👨‍💻</span>
+                        <h3>My Journey</h3>
+                        <p>Started my programming journey in 2022 when I entered Western Mindanao State university. What began as curiosity about how websites work has evolved into a passion for creating meaningful digital solutions. I love the problem-solving aspect of coding and the satisfaction of building something from scratch.</p>
+                        <span class="bento-date">2022 - Present</span>
+                    </div>
                 </div>
-                <div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
-                </div><div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
+                
+                <div class="bento-card">
+                    <div class="bento-content">
+                        <span class="bento-icon">🎮</span>
+                        <h3>Gaming Enthusiast</h3>
+                        <p>When I'm not coding, you'll find me gaming. I enjoy strategy games - they actually help improve my problem-solving skills!</p>
+                    </div>
                 </div>
-                     <div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
+                
+                <div class="bento-card">
+                    <div class="bento-content">
+                        <span class="bento-icon">😴</span>
+                        <h3>Sleep Lover</h3>
+                        <p>I believe in the power of good rest. Quality sleep helps me stay focused and creative when tackling complex coding challenges.</p>
+                    </div>
                 </div>
-                <div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
-                </div><div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
+                
+                <div class="bento-card tall">
+                    <div class="bento-content">
+                        <span class="bento-icon">🔬</span>
+                        <h3>Research Mindset</h3>
+                        <p>Currently working on my thesis involving AI and document processing. I love diving deep into emerging technologies and understanding how they can solve real-world problems. Always curious about the "how" and "why" behind everything.</p>
+                        <span class="bento-date">Academic Focus</span>
+                    </div>
                 </div>
-                  <div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
-                </div><div class="achievement-card">
-                    <span class="achievement-icon">🎓</span>
-                    <h3 class="achievement-title">Computer Science Student</h3>
-                    <p class="achievement-desc">Currently pursuing my degree at Western Mindanao State university while building side projects.</p>
-                    <div class="achievement-date">2022 - Present</div>
+                
+                <div class="bento-card">
+                    <div class="bento-content">
+                        <span class="bento-icon">🌱</span>
+                        <h3>Continuous Learner</h3>
+                        <p>Technology evolves fast, and I love keeping up. Always exploring new frameworks, languages, and development approaches.</p>
+                    </div>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="bento-content">
+                        <span class="bento-icon">🏫</span>
+                        <h3>WMSU Student</h3>
+                        <p>Studying Computer Science at Western Mindanao State University, balancing academic theory with practical project development.</p>
+                    </div>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="bento-content">
+                        <span class="bento-icon">💡</span>
+                        <h3>Creative Problem Solver</h3>
+                        <p>I approach challenges with curiosity and persistence. Every bug is a puzzle waiting to be solved, every feature a chance to innovate.</p>
+                    </div>
+                </div>
+                
+                <div class="bento-card">
+                    <div class="bento-content">
+                        <span class="bento-icon">🎯</span>
+                        <h3>Future Goals</h3>
+                        <p>Aspiring to work in AI/ML development and contribute to projects that make technology more accessible and useful for everyone.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!--  project -->
+
+        <!-- Projects Section -->
         <section class="section" id="projects">
             <div class="section-header">
-                <h2 class="section-title">PROJECT_DIRECTORY</h2>
+                <h2 class="section-title">Projects</h2>
                 <p class="section-subtitle">Notable system builds and experiments</p>
             </div>
 
-            <!-- Thesis project -->
-            <div class="project-showcase">
+            <div class="projects-grid">
+                <!-- Thesis project -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-status in-progress">In-progress</span>
-                        <h3 class="project-title">Thesis-RAG-Optimized-Procurement-Documents-Public</h3>
+                    <div class="project-image">
+                        <img src="images/thesis1.png" alt="Thesis RAG System" class="project-screenshot" id="thesisImage">
+                        <div class="project-status in-progress">In Progress</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Thesis-RAG-Optimized-Procurement-Documents</h3>
+                        <p class="project-description">Our thesis project focuses on developing an offline-capable system that allows users to search and analyze public procurement documents in PDF format using Artificial Intelligence.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Streamlit</span>
                             <span class="tech-tag">LangChain</span>
                             <span class="tech-tag">FAISS</span>
-                            <span class="tech-tag">Ollama</span>
-                            <span class="tech-tag">Local</span>
                         </div>
-                    </div>
-
-                <!-- image placeholder-->
-                   <div class="project-image-container">
-                        <img src="images/thesis1.png" alt="UI Screenshot of Thesis RAG System" class="project-ui-screenshot" id="thesisImage" style="cursor: pointer;">
-                    </div>
-
-                    <script>
-                    // Shuffle through different thesis images
-                    const thesisImages = [
-                        'images/thesis1.png',
-                        'images/thesis2.png',
-                        'images/thesis3.png',   
-                        'images/thesis4.png',
-                        'images/thesis5.png',
-                        'images/thesis6.png',
-                        'images/thesis7.png',
-                    ];
-
-                    let currentThesisIndex = 0;
-                    const thesisImg = document.getElementById('thesisImage');
-                    let thesisImageInterval = null;
-                    let thesisShuffleStarted = false;
-
-                    function shuffleThesisImage() {
-                        currentThesisIndex = (currentThesisIndex + 1) % thesisImages.length;
-                        thesisImg.src = thesisImages[currentThesisIndex];
-                    }
-
-                    function startThesisShuffling() {
-                        if (!thesisShuffleStarted) {
-                            thesisShuffleStarted = true;
-                            thesisImageInterval = setInterval(shuffleThesisImage, 3000);
-                        }
-                    }
-
-                    // Create intersection observer to detect when image is visible
-                    const thesisObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                startThesisShuffling();
-                            }
-                        });
-                    }, { threshold: 0.5 });
-
-                    // Start observing the thesis image
-                    thesisObserver.observe(thesisImg);
-
-                    // Add click event to change image manually
-                    thesisImg.addEventListener('click', function() {
-                        startThesisShuffling();
-                        shuffleThesisImage();
-                        // Reset the interval to prevent double changes
-                        clearInterval(thesisImageInterval);
-                        thesisImageInterval = setInterval(shuffleThesisImage, 3000);
-                    });
-                    </script>
-
-                    <div class="project-body">
-                        <p class="project-desc">Our thesis project focuses on developing an offline-capable system that allows users to search and analyze public procurement documents 
-                                                in PDF format using Artificial Intelligence. It uses a technique called Retrieval-Augmented Generation (RAG) combined with optimized 
-                                                Small Language Models (SLMs) to accurately answer questions based on the content of local government documents, even without internet access. 
-                                                The system is built as a Progressive Web App (PWA), enabling efficient, private, and accurate document querying tailored for resource-limited 
-                                                government institutions.</p>
                         <div class="project-links">
-                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">View Demo</a>
+                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link primary">View Demo</a>
                             <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source Code</a>
                         </div>
                     </div>
-
                 </div>
-            </div>
 
-            <!-- pet care connect project -->
-            <div class="project-showcase">
+                <!-- Pet Care Connect project -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-status completed">Completed</span>
-                        <h3 class="project-title">DreamPC</h3>
+                    <div class="project-image">
+                        <img src="images/pcc1.jpg" alt="Pet Care Connect System" class="project-screenshot" id="petcareImage">
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pet Care Connect</h3>
+                        <p class="project-description">A web-based platform that connects pet owners with local veterinary and grooming services through a centralized, user-friendly appointment system.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">PHP</span>
                         </div>
-                    </div>
-
-                <!-- image placeholder-->
-                    <div class="project-image-container">
-                        <img src="images/pcc1.jpg" alt="UI Screenshot of Pet Care Connect System" class="project-ui-screenshot" id="petcareImage" style="cursor: pointer;">
-                </div>
-
-                <script>
-                    // Shuffle through Different Pet Care Connect images
-                    const petcareImages = [
-                        'images/pcc1.jpg',
-                        'images/pcc2.jpg',
-                        'images/pcc3.jpg',   
-                        'images/pcc4.jpg',
-                        'images/pcc5.jpg'
-                    ];
-
-                    let currentPetcareIndex = 0;
-                    const petcareImg = document.getElementById('petcareImage');
-                    let petcareImageInterval = null;
-                    let petcareShuffleStarted = false;
-
-                    function shufflePetcareImage() {
-                        currentPetcareIndex = (currentPetcareIndex + 1) % petcareImages.length;
-                        petcareImg.src = petcareImages[currentPetcareIndex];
-                    }
-
-                    function startPetcareShuffling() {
-                        if (!petcareShuffleStarted) {
-                            petcareShuffleStarted = true;
-                            petcareImageInterval = setInterval(shufflePetcareImage, 3000);
-                        }
-                    }
-
-                    // Create intersection observer to detect when image is visible
-                    const petcareObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                startPetcareShuffling();
-                            }
-                        });
-                    }, { threshold: 0.5 });
-
-                    // Start observing the Pet Care Connect image
-                    petcareObserver.observe(petcareImg);
-
-                    // Add click event to change image manually
-                    petcareImg.addEventListener('click', function() {
-                        startPetcareShuffling();
-                        shufflePetcareImage();
-                        // Reset the interval to prevent double changes
-                        clearInterval(petcareImageInterval);
-                        petcareImageInterval = setInterval(shufflePetcareImage, 3000);
-                    });
-                </script>
-
-                    <div class="project-body">
-                        <p class="project-desc">Pet Care Connect is a web-based platform that connects pet owners with local veterinary and grooming services 
-                            through a centralized, user-friendly appointment system. The platform allows pet owners to book services, manage pet health records, 
-                            receive reminders, and communicate with service providers. For pet shops, it offers tools to manage appointments, staff schedules, 
-                            services, and customer interactions. Administrators can oversee the entire platform, including user analytics, financial reports, 
-                            and system settings. The system is designed to improve service accessibility, support local businesses, and streamline pet care 
-                            through automation, real-time updates, and location-based service discovery.</p>
                         <div class="project-links">
-                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">View Demo</a>
-                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source Code</a>
+                            <a href="#" class="project-link primary">View Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-
-            <!-- dreampc project -->
-            <div class="project-showcase">
+                <!-- DreamPC project -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-status completed">Completed</span>
+                    <div class="project-image">
+                        <img src="images/dream1.png" alt="DreamPC System" class="project-screenshot" id="dreampcImage">
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                    <div class="project-content">
                         <h3 class="project-title">DreamPC</h3>
+                        <p class="project-description">A comprehensive PC building and customization platform that helps users design their dream computer setup with compatibility checking and price optimization.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">PHP</span>
                         </div>
-                    </div>
-
-                <!-- image placeholder-->
-                    <div class="project-image-container">
-                        <img src="images/dream1.png" alt="UI Screenshot of DreamPC System" class="project-ui-screenshot" id="dreampcImage" style="cursor: pointer;">
-                    </div>
-
-                    <script>
-                    // Shuffle through different DreamPC images
-                    const dreampcImages = [
-                        'images/dream1.png',
-                        'images/dream2.png',
-                        'images/dream3.png',
-                        'images/dream4.png',
-                        'images/dream5.png',
-                        'images/dream6.png'
-                    ];
-
-                    let currentDreampcIndex = 0;
-                    const dreampcImg = document.getElementById('dreampcImage');
-                    let dreampcImageInterval = null;
-                    let dreampcShuffleStarted = false;
-
-                    function shuffleDreampcImage() {
-                        currentDreampcIndex = (currentDreampcIndex + 1) % dreampcImages.length;
-                        dreampcImg.src = dreampcImages[currentDreampcIndex];
-                    }
-
-                    function startDreampcShuffling() {
-                        if (!dreampcShuffleStarted) {
-                            dreampcShuffleStarted = true;
-                            dreampcImageInterval = setInterval(shuffleDreampcImage, 3000);
-                        }
-                    }
-
-                    // Create intersection observer to detect when image is visible
-                    const dreampcObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                startDreampcShuffling();
-                            }
-                        });
-                    }, { threshold: 0.5 });
-
-                    // Start observing the DreamPC image
-                    dreampcObserver.observe(dreampcImg);
-
-                    // Add click event to change image manually
-                    dreampcImg.addEventListener('click', function() {
-                        startDreampcShuffling();
-                        shuffleDreampcImage();
-                        // Reset the interval to prevent double changes
-                        clearInterval(dreampcImageInterval);
-                        dreampcImageInterval = setInterval(shuffleDreampcImage, 3000);
-                    });
-                    </script>
-
-                    <div class="project-body">
-                        <p class="project-desc">Pet Care Connect is a web-based platform that connects pet owners with local veterinary and grooming services 
-                            through a centralized, user-friendly appointment system. The platform allows pet owners to book services, manage pet health records, 
-                            receive reminders, and communicate with service providers. For pet shops, it offers tools to manage appointments, staff schedules, 
-                            services, and customer interactions. Administrators can oversee the entire platform, including user analytics, financial reports, 
-                            and system settings. The system is designed to improve service accessibility, support local businesses, and streamline pet care 
-                            through automation, real-time updates, and location-based service discovery.</p>
                         <div class="project-links">
-                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">View Demo</a>
-                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source Code</a>
+                            <a href="#" class="project-link primary">View Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- cyberpunk theme portfolio project -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/punk1.png" alt="Cyberpunk Portfolio" class="project-screenshot" id="cyberpunkImage">
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cyberpunk Portfolio</h3>
+                        <p class="project-description">A futuristic neon-themed portfolio website featuring glitch effects, holographic elements, and cyber-inspired UI components. Built with modern web technologies and animated transitions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GSAP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link primary">View Demo</a>
+                            <a href="#" class="project-link">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <!-- Skills Matrix -->
+        <!-- Skills Section -->
         <section class="section" id="skills">
             <div class="section-header">
-                <h2 class="section-title">SKILLS_MATRIX</h2>
+                <h2 class="section-title">Skills</h2>
                 <p class="section-subtitle">My core competencies and tools</p>
             </div>
             
-            <div class="skills-matrix">
+            <div class="skills-container">
                 <div class="skill-category">
                     <h3 class="skill-category-title">Programming Languages</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Python</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="90"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">JavaScript</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="85"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C++</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="75"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Java</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="70"></div></div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="75"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">Frontend Development</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">HTML5 / CSS3</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="95"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">React.js</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Laravel</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Tailwind CSS</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="85"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Responsive Design</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="90"></div></div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Backend & Database</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Node.js / Express</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">MongoDB</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="75"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">SQL (PostgreSQL, MySQL)</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="70"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">RESTful APIs</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="88"></div></div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Tools & Concepts</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Git / GitHub</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="90"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Docker</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="65"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">AI / ML Concepts</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="70"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">UI/UX Principles</span>
-                        <div class="skill-level"><div class="skill-progress" data-level="85"></div></div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML5 / CSS3</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">React.js</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Tailwind CSS</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-level="85"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-       <!-- Contact Section -->
-<section class="section" id="contact">
-    <div class="section-header">
-        <h2 class="section-title">ESTABLISH_CONNECTION</h2>
-        <p class="section-subtitle">Ready to collaborate? Let's sync up.</p>
-    </div>
-    
-    <div class="contact-container">
-        <!-- Contact Info Panel -->
-        <div class="contact-info">
-            <div class="info-terminal">
-                <div class="terminal-header">
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-title">contact_info@dean_reight:~$</div>
-                </div>
-                <div class="terminal-content">
-                    <div class="contact-item">
-                        <span class="contact-icon">📧</span>
-                        <div class="contact-details">
-                            <span class="contact-label">EMAIL:</span>
-                            <a href="mailto:deanbilledo@gmail.com" class="contact-value">deanbilledo@gmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">💼</span>
-                        <div class="contact-details">
-                            <span class="contact-label">LINKEDIN:</span>
-                            <a href="https://linkedin.com/in/dean-billedo" target="_blank" class="contact-value">linkedin.com/in/dean-billedo</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">💻</span>
-                        <div class="contact-details">
-                            <span class="contact-label">GITHUB:</span>
-                            <a href="https://github.com/deanbilledo" target="_blank" class="contact-value">github.com/deanbilledo</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">🌐</span>
-                        <div class="contact-details">
-                            <span class="contact-label">WEBSITE:</span>
-                            <a href="https://deanbilledo.dev" target="_blank" class="contact-value">deanbilledo.dev</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <div class="contact-details">
-                            <span class="contact-label">LOCATION:</span>
-                            <span class="contact-value">Zamboanga City, Philippines</span>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">⚡</span>
-                        <div class="contact-details">
-                            <span class="contact-label">STATUS:</span>
-                            <span class="contact-value status-online">Available for opportunities</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Ready to collaborate? Let's connect.</p>
             </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="contact-form-container">
-            <div class="contact-terminal">
-                <div class="terminal-header">
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-btn"></div>
-                    <div class="terminal-title">message@dean_reight:~$</div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in touch</h3>
+                    <div class="contact-links">
+                        <a href="mailto:deanreight@gmail.com" class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            deanbilledo@gmail.com
+                        </a>
+                        <a href="https://github.com/deanbilledo" class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/reighling" class="contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
                 </div>
+                
                 <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqabkplo" method="POST">
                     <div class="form-group">
-                        <label for="name" class="form-label">NAME:</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your designation..." required>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="form-label">EMAIL:</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="Your_ID@domain.com" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="message" class="form-label">MESSAGE:</label>
-                        <textarea id="message" name="message" class="form-input form-textarea" placeholder="Input your message here..." required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn" id="submitBtn">SEND_TRANSMISSION</button>
-                    <div id="formStatus" style="margin-top: 15px; text-align: center; font-size: 0.9em;"></div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="formStatus"></div>
                 </form>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>© <span id="currentYear"></span> Dean Reight F. Billedo. All rights reserved. // System Online.</p>
-            <p>Built with <span style="color: var(--secondary-glow);">code</span> and <span style="color: var(--primary-glow);">passion</span>.</p>
+            <p>© <span id="currentYear"></span> Dean Reight F. Billedo. All rights reserved.</p>
         </footer>
     </div>
 
-  <!-- Konami Code Trigger -->
-<div class="konami-trigger" title="Try the Konami Code!">?</div>
-
-<!-- Popup Box -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close-btn">&times;</span>
-    <p>
-      Hint: A legendary sequence of keys.<br>
-      Try: <strong>Up, Up, Down, Down, Left, Right, Left, Right, B, A</strong>
-    </p>
-  </div>
-</div>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
