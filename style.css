@@ -989,6 +989,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     box-shadow: var(--shadow-light);
+    z-index: 1;
 }
 
 .skill-tag::before {
@@ -1002,7 +1003,7 @@ body {
     border-radius: 50%;
     transition: all 0.3s ease;
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: -1;
 }
 
 .skill-tag:hover::before {
@@ -1016,12 +1017,6 @@ body {
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
 }
-
-.skill-tag span {
-    position: relative;
-    z-index: 1;
-}
-
 /* Contact */
 .contact-container {
     display: grid;
