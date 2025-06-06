@@ -355,175 +355,149 @@ window.addEventListener('resize', throttle(() => {
 }, 250));
 
 
-// Interactive Background Animation
+// Update your existing DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initSmoothScrolling();
+    animateSkills();
+    initProjectImageCycling();
+    initContactForm();
+    initScrollAnimations();
+    initBackgroundAnimation(); // Add this line
+    
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+});
+
+// Simple Interactive Background Animation
 function initBackgroundAnimation() {
-    // Create container for animation
+    console.log("Initializing background animation...");
+    
     const bgAnimation = document.createElement('div');
     bgAnimation.className = 'bg-animation';
     document.body.prepend(bgAnimation);
     
     // Configuration
     const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 10 : 18;
-    const sizes = isMobile ? [40, 60, 80] : [60, 100, 140, 180];
-    const depthLevels = [20, 40, 60, 80]; // Z-depth for parallax effect
-    
-    // Tracking variables for interaction
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetMouseX = 0;
-    let targetMouseY = 0;
-    let deviceBeta = 0; // For mobile tilt (forward/backward)
-    let deviceGamma = 0; // For mobile tilt (left/right)
-    
-    // Track all particles for animation
+    const particleCount = isMobile ? 20 : 40;
     const particles = [];
     
-    // Create initial particles
-    for (let i = 0; i < particleCount; i++) {
-        const particle = createParticle(bgAnimation, sizes, depthLevels);
-        particles.push(particle);
+    // Device orientation tracking for mobile
+    let deviceX = 0;
+    let deviceY = 0;
+    
+    // Create particles
+    function createParticles() {
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'idle-particle';
+            
+            // Random position
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            
+            // Random animation delay
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            
+            bgAnimation.appendChild(particle);
+            
+            particles.push({
+                element: particle,
+                baseX: x,
+                baseY: y,
+                currentX: x,
+                currentY: y
+            });
+        }
     }
     
-    // Mouse movement listener for desktop
-    document.addEventListener('mousemove', (e) => {
-        targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2; // -1 to 1
-        targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2; // -1 to 1
-    });
+    // Mouse interaction for desktop
+    if (!isMobile) {
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            particles.forEach(particle => {
+                const { element, baseX, baseY } = particle;
+                
+                // Calculate distance from mouse
+                const dx = mouseX - baseX;
+                const dy = mouseY - baseY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 150) { // Interaction radius
+                    // Calculate push effect
+                    const force = (150 - distance) / 150;
+                    const pushX = (baseX - mouseX) * force * 0.5;
+                    const pushY = (baseY - mouseY) * force * 0.5;
+                    
+                    particle.currentX = baseX + pushX;
+                    particle.currentY = baseY + pushY;
+                    
+                    element.style.transform = `translate(${pushX}px, ${pushY}px)`;
+                    element.classList.add('particle-hover');
+                } else {
+                    // Return to base position
+                    element.style.transform = 'translate(0px, 0px)';
+                    element.classList.remove('particle-hover');
+                    particle.currentX = baseX;
+                    particle.currentY = baseY;
+                }
+            });
+        });
+    }
     
     // Device orientation for mobile
-    window.addEventListener('deviceorientation', (e) => {
-        // Beta: front/back tilt from -180 to 180
-        // Gamma: left/right tilt from -90 to 90
-        if (e.beta !== null && e.gamma !== null) {
-            deviceBeta = Math.min(Math.max(e.beta, -45), 45) / 45; // Normalize to -1 to 1
-            deviceGamma = Math.min(Math.max(e.gamma, -45), 45) / 45; // Normalize to -1 to 1
-        }
-    });
-    
-    // Smooth animation for mouse/device movement
-    function updateParticlePositions() {
-        // Smooth mouse movement (easing)
-        mouseX += (targetMouseX - mouseX) * 0.05;
-        mouseY += (targetMouseY - mouseY) * 0.05;
-        
-        // Get interaction values (either mouse or device orientation)
-        const interactX = isMobile ? deviceGamma : mouseX;
-        const interactY = isMobile ? deviceBeta : mouseY;
-        
-        // Apply to each particle
-        particles.forEach(particle => {
-            const { element, depth } = particle;
-            if (element && element.parentNode) {
-                // Calculate movement based on depth (deeper = more movement)
-                const moveX = interactX * (depth / 20); // Adjust divisor for sensitivity
-                const moveY = interactY * (depth / 20);
+    if (isMobile && window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', (e) => {
+            if (e.beta !== null && e.gamma !== null) {
+                // Normalize values
+                deviceX = Math.max(-30, Math.min(30, e.gamma)) / 30; // -1 to 1
+                deviceY = Math.max(-30, Math.min(30, e.beta)) / 30;  // -1 to 1
                 
-                // Apply parallax effect
-                element.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+                particles.forEach(particle => {
+                    const { element, baseX, baseY } = particle;
+                    
+                    // Apply tilt-based movement
+                    const moveX = deviceX * 30; // Adjust sensitivity
+                    const moveY = deviceY * 30;
+                    
+                    element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
             }
         });
         
-        requestAnimationFrame(updateParticlePositions);
+        // Request permission for iOS devices
+        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission()
+                .then(response => {
+                    if (response == 'granted') {
+                        console.log("Device orientation permission granted");
+                    }
+                })
+                .catch(console.error);
+        }
     }
     
-    // Start the animation loop
-    updateParticlePositions();
-    
-    // Periodically create new particles
-    setInterval(() => {
-        if (document.body.contains(bgAnimation) && particles.length < particleCount + 3) {
-            const particle = createParticle(bgAnimation, sizes, depthLevels);
-            particles.push(particle);
-            
-            // Clean up removed particles from array
-            for (let i = particles.length - 1; i >= 0; i--) {
-                if (!particles[i].element.parentNode) {
-                    particles.splice(i, 1);
-                }
-            }
-        }
-    }, 3000);
-    
-    // Handle resize
+    // Handle window resize
     window.addEventListener('resize', () => {
-        const newIsMobile = window.innerWidth < 768;
-        if (newIsMobile !== isMobile) {
-            // Refresh if switching between mobile/desktop
-            while (bgAnimation.firstChild) {
-                bgAnimation.firstChild.remove();
+        // Clear existing particles
+        particles.forEach(particle => {
+            if (particle.element.parentNode) {
+                particle.element.remove();
             }
-            particles.length = 0;
-            
-            // Create new particles with appropriate sizes
-            const newSizes = newIsMobile ? [40, 60, 80] : [60, 100, 140, 180];
-            const newCount = newIsMobile ? 10 : 18;
-            
-            for (let i = 0; i < newCount; i++) {
-                const particle = createParticle(bgAnimation, newSizes, depthLevels);
-                particles.push(particle);
-            }
-        }
+        });
+        particles.length = 0;
+        
+        // Recreate particles for new screen size
+        setTimeout(createParticles, 100);
     });
+    
+    // Initialize particles
+    createParticles();
+    
+    console.log(`Background animation initialized with ${particleCount} particles`);
 }
-
-function createParticle(container, sizes, depthLevels) {
-    const particle = document.createElement('div');
-    particle.className = 'floating-particle';
-    
-    // Random size
-    const size = sizes[Math.floor(Math.random() * sizes.length)];
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    
-    // Random position
-    particle.style.left = `${Math.random() * 100}%`;
-    
-    // Random depth for parallax effect
-    const depth = depthLevels[Math.floor(Math.random() * depthLevels.length)];
-    
-    // Animation properties
-    const duration = 20 + Math.random() * 40; // 20-60s
-    const xMove = (Math.random() - 0.5) * 150; // -75px to 75px
-    const xEnd = (Math.random() - 0.5) * 150; // -75px to 75px
-    const rotation = Math.random() * 360; // 0-360deg
-    const opacity = 0.05 + Math.random() * 0.15; // 0.05-0.2 (more subtle)
-    
-    // Set custom properties for animation
-    particle.style.setProperty('--x-move', `${xMove}px`);
-    particle.style.setProperty('--x-end', `${xEnd}px`);
-    particle.style.setProperty('--rotation', `${rotation}deg`);
-    particle.style.setProperty('--opacity', opacity);
-    
-    // Set animation
-    particle.style.animationDuration = `${duration}s`;
-    particle.style.animationDelay = `${Math.random() * 5}s`;
-    
-    // Add to container
-    container.appendChild(particle);
-    
-    // Store the particle object with its element and depth
-    const particleObj = {
-        element: particle,
-        depth: depth
-    };
-    
-    // Remove after animation completes
-    setTimeout(() => {
-        if (particle.parentNode) {
-            particle.remove();
-        }
-    }, (duration + 5) * 1000);
-    
-    return particleObj;
-}
-
-// Initialize the animation with your other initializations
-document.addEventListener('DOMContentLoaded', () => {
-    // Your existing initializations
-    initTheme();
-    // ... other initializations
-    
-    // Add our interactive background
-    initBackgroundAnimation();
-});

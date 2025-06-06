@@ -1318,8 +1318,7 @@ body {
     }
 }
 
-/* Floating Background Animation */
-/* Update Floating Background Animation */
+/* Simple Idle Background Animation */
 .bg-animation {
     position: fixed;
     top: 0;
@@ -1329,69 +1328,83 @@ body {
     z-index: -10;
     pointer-events: none;
     overflow: hidden;
-    perspective: 1000px;
-    transform-style: preserve-3d;
 }
 
-.floating-particle {
+.idle-particle {
     position: absolute;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    animation: float-up linear infinite;
-    opacity: 0;
-    will-change: transform, opacity;
-    transition: transform 0.1s ease-out;
-    transform: translateZ(0);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    will-change: transform;
 }
 
-/* Light mode particles - updated for better visibility and subtlety */
-.light-mode .floating-particle {
-    background: linear-gradient(135deg, rgba(0, 122, 255), rgba(102, 126, 234));
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+/* Light mode particles */
+.light-mode .idle-particle {
+    background: rgba(0, 122, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 122, 255, 0.3);
 }
 
-/* Dark mode particles - updated for better visibility and subtlety */
-.dark-mode .floating-particle {
-    background: linear-gradient(135deg, rgba(0, 122, 255), rgba(102, 126, 234));
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+/* Dark mode particles */
+.dark-mode .idle-particle {
+    background: rgba(0, 122, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
 }
 
-/* Float animation */
-@keyframes float-up {
-    0% {
-        transform: translateY(110vh) translateX(var(--x-move)) rotate(0deg);
-        opacity: 0;
+/* Idle floating animation */
+@keyframes idle-float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
     }
-    10% {
-        opacity: var(--opacity);
+    25% {
+        transform: translateY(-20px) translateX(10px);
     }
-    90% {
-        opacity: var(--opacity);
+    50% {
+        transform: translateY(0px) translateX(-10px);
     }
-    100% {
-        transform: translateY(-10vh) translateX(var(--x-end)) rotate(var(--rotation));
-        opacity: 0;
+    75% {
+        transform: translateY(20px) translateX(5px);
     }
 }
 
-/* Enhanced glassmorphism for existing elements */
+.idle-particle {
+    animation: idle-float 8s ease-in-out infinite;
+}
+
+/* Mouse interaction effects */
+.particle-hover {
+    transform: scale(3) !important;
+    opacity: 1 !important;
+    box-shadow: 0 0 25px currentColor !important;
+}
+
+/* Enhanced glassmorphism for cards */
 .bento-card, 
 .project-card, 
 .skill-category, 
 .contact-form,
 .mac-window,
-.metric-card,
-.hero-bio {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+.metric-card {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
-/* Accessibility - disable animation for users who prefer reduced motion */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .floating-particle {
-        display: none;
+    .idle-particle {
+        animation: none !important;
+        display: none !important;
+    }
+    .bg-animation {
+        display: none !important;
+    }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .idle-particle {
+        width: 3px;
+        height: 3px;
     }
 }
