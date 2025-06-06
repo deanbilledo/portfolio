@@ -14,7 +14,7 @@ A modern, responsive portfolio website showcasing my journey as a Computer Scien
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: [Your Portfolio URL]
+Visit the live portfolio: reigh.site
 
 ## 📂 Project Structure
 
