@@ -214,7 +214,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px 20px 80px;
+    padding: 120px 20px 80px;
 }
 
 .hero-content {
@@ -387,7 +387,6 @@ body {
         box-shadow: var(--shadow-heavy);
     }
 }
-
 
 .mac-titlebar {
     background: var(--bg-secondary);
@@ -1063,7 +1062,6 @@ body {
     gap: 20px;
     padding: 0;
 }
-/* ...existing code... */
 
 .skill-card {
     background: var(--bg-glass);
@@ -1208,53 +1206,6 @@ body {
         var(--shadow-medium),
         0 8px 20px rgba(0, 122, 255, 0.2);
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .skill-card {
-        padding: 20px 16px;
-        min-height: 100px;
-        gap: 10px;
-    }
-    
-    .skill-icon {
-        font-size: 2.5rem;
-    }
-    
-    .skill-name {
-        font-size: 1rem;
-    }
-    
-    .skill-tag {
-        padding: 12px 16px;
-        font-size: 0.9rem;
-        min-width: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .skill-card {
-        padding: 18px 14px;
-        min-height: 90px;
-        gap: 8px;
-    }
-    
-    .skill-icon {
-        font-size: 2.2rem;
-    }
-    
-    .skill-name {
-        font-size: 0.9rem;
-    }
-    
-    .skill-tag {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-        min-width: 90px;
-    }
-}
-
-/* ...rest of existing code... */
 
 /* Contact */
 .contact-container {
@@ -1482,15 +1433,58 @@ body {
     }
     
     .hero-section {
-        padding: 100px 15px 60px;
+        min-height: 100vh;
+        padding: 80px 15px 40px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 100px;
+    }
+    
+    .hero-content {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .mac-window {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
     }
     
     .mac-content {
-        padding: 24px;
+        padding: 20px;
+    }
+    
+    .hero-name {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+    
+    .hero-tagline {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
     }
     
     .hero-metrics {
         grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 20px 0;
+    }
+    
+    .metric-card {
+        padding: 16px;
+    }
+    
+    .hero-bio {
+        margin-top: 20px;
+        padding: 16px;
+    }
+    
+    .hero-bio p {
+        font-size: 0.9rem;
     }
     
     .mac-title {
@@ -1643,31 +1637,23 @@ body {
     }
     
     .skill-card {
-        padding: 16px;
-    }
-    
-    .skill-icon {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-    
-    .skill-name {
-        font-size: 0.9rem;
-        margin-bottom: 6px;
-    }
-    
-    .skill-level {
-        font-size: 0.8rem;
-        padding: 3px 10px;
-    }
-    
-    .skills-tags {
+        padding: 20px 16px;
+        min-height: 100px;
         gap: 10px;
     }
     
+    .skill-icon {
+        font-size: 2.5rem;
+    }
+    
+    .skill-name {
+        font-size: 1rem;
+    }
+    
     .skill-tag {
-        padding: 10px 14px;
-        font-size: 0.85rem;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        min-width: 100px;
     }
     
     .scroll-to-top {
@@ -1684,8 +1670,85 @@ body {
         font-size: 2rem;
     }
     
+    .hero-section {
+        min-height: 100vh;
+        padding: 90px 10px 30px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    
+    .hero-content {
+        margin-top: 10px;
+    }
+    
+    .mac-content {
+        padding: 16px;
+    }
+    
+    .mac-titlebar {
+        padding: 8px 12px;
+    }
+    
+    .mac-control {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .mac-title {
+        font-size: 0.75rem;
+        margin-left: -40px;
+    }
+    
+    .terminal-header {
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+    }
+    
+    .terminal-prompt,
+    .terminal-path {
+        font-size: 0.75rem;
+    }
+    
     .hero-name {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 10vw, 2.2rem);
+        margin-bottom: 12px;
+    }
+    
+    .hero-tagline {
+        font-size: clamp(0.9rem, 5vw, 1.1rem);
+        margin-bottom: 8px;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+    }
+    
+    .hero-metrics {
+        margin: 16px 0;
+        gap: 10px;
+    }
+    
+    .metric-card {
+        padding: 12px;
+    }
+    
+    .metric-icon {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+    
+    .metric-label {
+        font-size: 0.8rem;
+    }
+    
+    .hero-bio {
+        margin-top: 16px;
+        padding: 12px;
+    }
+    
+    .hero-bio p {
+        font-size: 0.85rem;
     }
     
     .nav-container {
@@ -1699,24 +1762,6 @@ body {
     .theme-toggle {
         width: 36px;
         height: 36px;
-    }
-    
-    .mac-content {
-        padding: 20px;
-    }
-    
-    .mac-titlebar {
-        padding: 10px 12px;
-    }
-    
-    .mac-control {
-        width: 10px;
-        height: 10px;
-    }
-    
-    .terminal-prompt,
-    .terminal-path {
-        font-size: 0.8rem;
     }
     
     .bento-card {
@@ -1805,34 +1850,23 @@ body {
     }
     
     .skill-card {
-        padding: 14px;
+        padding: 18px 14px;
+        min-height: 90px;
+        gap: 8px;
     }
     
     .skill-icon {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
+        font-size: 2.2rem;
     }
     
     .skill-name {
-        font-size: 0.85rem;
-        margin-bottom: 4px;
-    }
-    
-    .skill-level {
-        font-size: 0.75rem;
-        padding: 2px 8px;
-    }
-    
-    .skills-tags {
-        gap: 8px;
-        flex-direction: column;
-        align-items: center;
+        font-size: 0.9rem;
     }
     
     .skill-tag {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        width: fit-content;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+        min-width: 90px;
     }
     
     .scroll-to-top {
@@ -1841,5 +1875,122 @@ body {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        padding: 60px 15px 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        margin-top: 0;
+    }
+    
+    .mac-content {
+        padding: 16px;
+    }
+    
+    .hero-metrics {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 16px 0;
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .hero-section {
+        padding: 50px 10px 15px;
+    }
+    
+    .mac-content {
+        padding: 12px;
+    }
+    
+    .hero-name {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .hero-description {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+    
+    .hero-metrics {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin: 12px 0;
+    }
+    
+    .metric-card {
+        padding: 8px;
+    }
+    
+    .metric-icon {
+        font-size: 1.2rem;
+        margin-bottom: 2px;
+    }
+    
+    .metric-label {
+        font-size: 0.7rem;
+    }
+    
+    .hero-bio {
+        margin-top: 12px;
+        padding: 10px;
+    }
+    
+    .hero-bio p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Very small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .hero-section {
+        padding: 85px 8px 25px;
+    }
+    
+    .mac-content {
+        padding: 12px;
+    }
+    
+    .hero-name {
+        font-size: clamp(1.6rem, 12vw, 2rem);
+    }
+    
+    .hero-tagline {
+        font-size: clamp(0.8rem, 6vw, 1rem);
+    }
+    
+    .hero-description {
+        font-size: 0.8rem;
+    }
+    
+    .hero-metrics {
+        gap: 8px;
+    }
+    
+    .metric-card {
+        padding: 10px;
+    }
+    
+    .hero-bio {
+        margin-top: 12px;
+        padding: 10px;
+    }
+    
+    .hero-bio p {
+        font-size: 0.8rem;
     }
 }
