@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover - by Dean</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-cut"></i>
+                <h1>Background Remover - by Dean</h1>
+            </div>
+            <p>Professional background removal tool - Remove backgrounds instantly with AI precision</p>
+        </header>
+        
+        <div class="upload-container">
+            <div class="upload-area" id="drop-area">
+                <div class="upload-message">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Drag & drop your image here or <span class="browse-btn">browse files</span></p>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                </div>
+            </div>
+            <div class="progress-container" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="progress-text">Processing your image...</p>
+            </div>
+        </div>
+        
+        <div class="result-container" style="display: none;">
+            <h2>Results</h2>
+            <div class="image-comparison">
+                <div class="image-box">
+                    <h3>Original Image</h3>
+                    <div class="image-wrapper">
+                        <img id="original-image" src="" alt="Original Image">
+                    </div>
+                </div>
+                <div class="image-box">
+                    <h3>Background Removed</h3>
+                    <div class="image-wrapper">
+                        <img id="processed-image" src="" alt="Processed Image">
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="download-btn" class="btn">
+                    <i class="fas fa-download"></i> 
+                    Download Image
+                </button>
+                <button id="try-again-btn" class="btn secondary">
+                    <i class="fas fa-redo"></i> 
+                    Process Another
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="creator-info">
+                <h3>Created with ❤️ by Dean</h3>
+                <p>Full-stack developer passionate about AI and image processing</p>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/deanbilledo" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/reigh/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://twitter.com/dean" class="social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    Twitter
+                </a>
+                <a href="mailto:deanreight@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </div>
+            <div class="copyright">
+                <p>&copy; All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const dropArea = document.getElementById('drop-area');
+            const fileInput = document.getElementById('file-input');
+            const browseBtn = document.querySelector('.browse-btn');
+            const progressContainer = document.querySelector('.progress-container');
+            const progressFill = document.querySelector('.progress-fill');
+            const uploadMessage = document.querySelector('.upload-message');
+            const resultContainer = document.querySelector('.result-container');
+            const originalImage = document.getElementById('original-image');
+            const processedImage = document.getElementById('processed-image');
+            const downloadBtn = document.getElementById('download-btn');
+            const tryAgainBtn = document.getElementById('try-again-btn');
+
+            // Event listeners for drag and drop
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            function highlight() {
+                dropArea.classList.add('highlight');
+            }
+
+            function unhighlight() {
+                dropArea.classList.remove('highlight');
+            }
+
+            // Handle file drop
+            dropArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                
+                if (files.length) {
+                    handleFiles(files);
+                }
+            }
+
+            // Handle file selection via browse button
+            browseBtn.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length) {
+                    handleFiles(fileInput.files);
+                }
+            });
+
+            // Process the selected file
+            function handleFiles(files) {
+                const file = files[0];
+                
+                // Check if file is an image
+                if (!file.type.match('image.*')) {
+                    alert('Please select an image file (JPEG, PNG, etc.)');
+                    return;
+                }
+                
+                // Show progress bar
+                uploadMessage.style.display = 'none';
+                progressContainer.style.display = 'block';
+                dropArea.classList.add('processing');
+                progressFill.style.width = '50%';
+                
+                // Create form data and upload file
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    progressFill.style.width = '90%';
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    progressFill.style.width = '100%';
+                    setTimeout(() => {
+                        // Hide upload area and show results
+                        dropArea.style.display = 'none';
+                        resultContainer.style.display = 'block';
+                        
+                        // Set images
+                        originalImage.src = data.original;
+                        processedImage.src = data.processed;
+                        
+                        // Set download button
+                        downloadBtn.onclick = () => {
+                            downloadImage(data.processed);
+                        };
+                    }, 500);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while processing the image. Please try again.');
+                    resetUI();
+                });
+            }
+
+            // Function to download the processed image
+            function downloadImage(url) {
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'pixelcut-pro-result.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+
+            // Try again button
+            tryAgainBtn.addEventListener('click', resetUI);
+
+            // Reset UI to initial state
+            function resetUI() {
+                resultContainer.style.display = 'none';
+                dropArea.style.display = 'block';
+                uploadMessage.style.display = 'flex';
+                progressContainer.style.display = 'none';
+                progressFill.style.width = '0%';
+                dropArea.classList.remove('processing');
+                fileInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
