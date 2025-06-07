@@ -214,7 +214,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 20px 80px;
+    padding: 10px 20px 80px;
 }
 
 .hero-content {
@@ -387,6 +387,7 @@ body {
         box-shadow: var(--shadow-heavy);
     }
 }
+
 
 .mac-titlebar {
     background: var(--bg-secondary);
@@ -1067,19 +1068,13 @@ body {
     background: var(--bg-glass);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-small);
-    padding: 24px 20px;
+    padding: 20px;
     text-align: center;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
     cursor: pointer;
     box-shadow: var(--shadow-light);
-    min-height: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
 }
 
 .skill-card::before {
@@ -1098,85 +1093,80 @@ body {
 }
 
 .skill-card:hover {
-    transform: translateY(-6px) scale(1.02);
+    transform: translateY(-4px);
     border-color: var(--primary-color);
-    box-shadow: 
-        var(--shadow-medium),
-        0 8px 25px rgba(0, 122, 255, 0.15),
-        0 0 0 1px rgba(0, 122, 255, 0.1);
-    background: rgba(0, 122, 255, 0.02);
+    box-shadow: var(--shadow-medium);
 }
 
 .skill-icon {
-    font-size: 3rem;
-    margin-bottom: 0;
+    font-size: 2.5rem;
+    margin-bottom: 12px;
     display: block;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    transition: var(--transition);
-    flex-shrink: 0;
-}
-
-.skill-card:hover .skill-icon {
-    transform: scale(1.1);
-    filter: drop-shadow(0 4px 8px rgba(0, 122, 255, 0.2));
-}
-
-.skill-card:hover .skill-icon img {
-    filter: brightness(1.1) saturate(1.2);
 }
 
 .skill-name {
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     display: block;
-    margin: 0;
-    line-height: 1.3;
-    text-align: center;
-    transition: var(--transition);
-    flex-shrink: 0;
+    margin-bottom: 8px;
 }
 
-.skill-card:hover .skill-name {
-    color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-/* Remove skill-level completely */
 .skill-level {
-    display: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: 4px 12px;
+    border-radius: var(--border-radius-small);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    display: inline-block;
 }
 
-/* Dark mode enhancements for skill cards */
-.dark-mode .skill-card:hover {
-    background: rgba(0, 122, 255, 0.05);
-    box-shadow: 
-        var(--shadow-medium),
-        0 8px 25px rgba(0, 122, 255, 0.2),
-        0 0 0 1px rgba(0, 122, 255, 0.15);
+.skill-level.expert {
+    color: var(--success-color);
+    background: rgba(52, 199, 89, 0.1);
+    border-color: var(--success-color);
 }
 
-.dark-mode .skill-card:hover .skill-icon {
-    filter: drop-shadow(0 4px 8px rgba(0, 122, 255, 0.3));
+.skill-level.advanced {
+    color: var(--primary-color);
+    background: rgba(0, 122, 255, 0.1);
+    border-color: var(--primary-color);
 }
 
-/* Enhanced skill tags */
+.skill-level.intermediate {
+    color: var(--warning-color);
+    background: rgba(255, 149, 0, 0.1);
+    border-color: var(--warning-color);
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 0;
+}
+
 .skill-tag {
     background: var(--bg-glass);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    padding: 14px 20px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
     cursor: pointer;
     box-shadow: var(--shadow-light);
     z-index: 1;
-    min-width: 120px;
-    text-align: center;
 }
 
 .skill-tag::before {
@@ -1186,25 +1176,23 @@ body {
     left: 50%;
     width: 0;
     height: 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     border-radius: 50%;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     transform: translate(-50%, -50%);
     z-index: -1;
 }
 
 .skill-tag:hover::before {
-    width: 300%;
-    height: 300%;
+    width: 200%;
+    height: 200%;
 }
 
 .skill-tag:hover {
     color: white;
     border-color: var(--primary-color);
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 
-        var(--shadow-medium),
-        0 8px 20px rgba(0, 122, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Contact */
@@ -1433,58 +1421,15 @@ body {
     }
     
     .hero-section {
-        min-height: 100vh;
-        padding: 80px 15px 40px;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding-top: 100px;
-    }
-    
-    .hero-content {
-        width: 100%;
-        margin-top: 20px;
-    }
-    
-    .mac-window {
-        max-width: 100%;
-        width: 100%;
-        margin: 0 auto;
+        padding: 10px 15px 60px;
     }
     
     .mac-content {
-        padding: 20px;
-    }
-    
-    .hero-name {
-        font-size: clamp(2rem, 8vw, 2.5rem);
-    }
-    
-    .hero-tagline {
-        font-size: clamp(1rem, 4vw, 1.2rem);
-    }
-    
-    .hero-description {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
+        padding: 24px;
     }
     
     .hero-metrics {
         grid-template-columns: 1fr;
-        gap: 12px;
-        margin: 20px 0;
-    }
-    
-    .metric-card {
-        padding: 16px;
-    }
-    
-    .hero-bio {
-        margin-top: 20px;
-        padding: 16px;
-    }
-    
-    .hero-bio p {
-        font-size: 0.9rem;
     }
     
     .mac-title {
@@ -1637,23 +1582,31 @@ body {
     }
     
     .skill-card {
-        padding: 20px 16px;
-        min-height: 100px;
-        gap: 10px;
+        padding: 16px;
     }
     
     .skill-icon {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
     
     .skill-name {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .skill-level {
+        font-size: 0.8rem;
+        padding: 3px 10px;
+    }
+    
+    .skills-tags {
+        gap: 10px;
     }
     
     .skill-tag {
-        padding: 12px 16px;
-        font-size: 0.9rem;
-        min-width: 100px;
+        padding: 10px 14px;
+        font-size: 0.85rem;
     }
     
     .scroll-to-top {
@@ -1670,85 +1623,8 @@ body {
         font-size: 2rem;
     }
     
-    .hero-section {
-        min-height: 100vh;
-        padding: 90px 10px 30px;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-    
-    .hero-content {
-        margin-top: 10px;
-    }
-    
-    .mac-content {
-        padding: 16px;
-    }
-    
-    .mac-titlebar {
-        padding: 8px 12px;
-    }
-    
-    .mac-control {
-        width: 8px;
-        height: 8px;
-    }
-    
-    .mac-title {
-        font-size: 0.75rem;
-        margin-left: -40px;
-    }
-    
-    .terminal-header {
-        margin-bottom: 16px;
-        padding-bottom: 12px;
-    }
-    
-    .terminal-prompt,
-    .terminal-path {
-        font-size: 0.75rem;
-    }
-    
     .hero-name {
-        font-size: clamp(1.8rem, 10vw, 2.2rem);
-        margin-bottom: 12px;
-    }
-    
-    .hero-tagline {
-        font-size: clamp(0.9rem, 5vw, 1.1rem);
-        margin-bottom: 8px;
-    }
-    
-    .hero-description {
-        font-size: 0.85rem;
-        margin-bottom: 16px;
-    }
-    
-    .hero-metrics {
-        margin: 16px 0;
-        gap: 10px;
-    }
-    
-    .metric-card {
-        padding: 12px;
-    }
-    
-    .metric-icon {
-        font-size: 1.4rem;
-        margin-bottom: 4px;
-    }
-    
-    .metric-label {
-        font-size: 0.8rem;
-    }
-    
-    .hero-bio {
-        margin-top: 16px;
-        padding: 12px;
-    }
-    
-    .hero-bio p {
-        font-size: 0.85rem;
+        font-size: 2.5rem;
     }
     
     .nav-container {
@@ -1762,6 +1638,24 @@ body {
     .theme-toggle {
         width: 36px;
         height: 36px;
+    }
+    
+    .mac-content {
+        padding: 20px;
+    }
+    
+    .mac-titlebar {
+        padding: 10px 12px;
+    }
+    
+    .mac-control {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .terminal-prompt,
+    .terminal-path {
+        font-size: 0.8rem;
     }
     
     .bento-card {
@@ -1850,23 +1744,34 @@ body {
     }
     
     .skill-card {
-        padding: 18px 14px;
-        min-height: 90px;
-        gap: 8px;
+        padding: 14px;
     }
     
     .skill-icon {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        margin-bottom: 8px;
     }
     
     .skill-name {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+    
+    .skill-level {
+        font-size: 0.75rem;
+        padding: 2px 8px;
+    }
+    
+    .skills-tags {
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
     }
     
     .skill-tag {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-        min-width: 90px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        width: fit-content;
     }
     
     .scroll-to-top {
@@ -1875,122 +1780,5 @@ body {
         width: 40px;
         height: 40px;
         font-size: 1rem;
-    }
-}
-
-/* Landscape orientation adjustments for mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-    .hero-section {
-        min-height: 100vh;
-        padding: 60px 15px 20px;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .hero-content {
-        margin-top: 0;
-    }
-    
-    .mac-content {
-        padding: 16px;
-    }
-    
-    .hero-metrics {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin: 16px 0;
-    }
-}
-
-@media (max-width: 480px) and (orientation: landscape) {
-    .hero-section {
-        padding: 50px 10px 15px;
-    }
-    
-    .mac-content {
-        padding: 12px;
-    }
-    
-    .hero-name {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
-    }
-    
-    .hero-tagline {
-        font-size: 1rem;
-        margin-bottom: 6px;
-    }
-    
-    .hero-description {
-        font-size: 0.8rem;
-        margin-bottom: 12px;
-    }
-    
-    .hero-metrics {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-        margin: 12px 0;
-    }
-    
-    .metric-card {
-        padding: 8px;
-    }
-    
-    .metric-icon {
-        font-size: 1.2rem;
-        margin-bottom: 2px;
-    }
-    
-    .metric-label {
-        font-size: 0.7rem;
-    }
-    
-    .hero-bio {
-        margin-top: 12px;
-        padding: 10px;
-    }
-    
-    .hero-bio p {
-        font-size: 0.8rem;
-    }
-}
-
-/* Very small screens (iPhone SE, etc.) */
-@media (max-width: 375px) {
-    .hero-section {
-        padding: 85px 8px 25px;
-    }
-    
-    .mac-content {
-        padding: 12px;
-    }
-    
-    .hero-name {
-        font-size: clamp(1.6rem, 12vw, 2rem);
-    }
-    
-    .hero-tagline {
-        font-size: clamp(0.8rem, 6vw, 1rem);
-    }
-    
-    .hero-description {
-        font-size: 0.8rem;
-    }
-    
-    .hero-metrics {
-        gap: 8px;
-    }
-    
-    .metric-card {
-        padding: 10px;
-    }
-    
-    .hero-bio {
-        margin-top: 12px;
-        padding: 10px;
-    }
-    
-    .hero-bio p {
-        font-size: 0.8rem;
     }
 }
