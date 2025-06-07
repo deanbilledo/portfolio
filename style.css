@@ -1412,6 +1412,10 @@ body {
         padding: 12px 16px;
     }
     
+    .main-container {
+        padding-top: 80px;
+    }
+
     .nav-menu {
         display: none;
     }
