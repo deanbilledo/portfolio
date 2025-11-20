@@ -1,16 +1,18 @@
 // DOM Elements
 const progressBar = document.getElementById('progressBar');
-const themeToggle = document.getElementById('themeToggle');
+// const themeToggle = document.getElementById('themeToggle'); // Removed for NGE theme
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.section');
 const skillProgressBars = document.querySelectorAll('.skill-progress');
 
-// Theme Management
+// Theme Management - Forced to NGE (Dark)
 function initTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.body.className = savedTheme + '-mode';
+    // Force dark mode for NGE theme
+    document.body.className = 'dark-mode';
+    localStorage.setItem('theme', 'dark');
 }
 
+/* Theme toggling disabled for NGE theme
 function toggleTheme() {
     const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -18,6 +20,7 @@ function toggleTheme() {
     document.body.className = newTheme + '-mode';
     localStorage.setItem('theme', newTheme);
 }
+*/
 
 // Progress Bar
 function updateProgressBar() {
@@ -822,7 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Event Listeners
-themeToggle.addEventListener('click', toggleTheme);
+// themeToggle.addEventListener('click', toggleTheme); // Disabled
 
 window.addEventListener('scroll', throttle(() => {
     updateProgressBar();
@@ -835,6 +838,7 @@ window.addEventListener('resize', throttle(() => {
 }, 250));
 
 // Theme Management with synchronized transitions
+/* Disabled for NGE theme
 function initTheme() {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.className = savedTheme + '-mode';
@@ -867,5 +871,6 @@ function toggleTheme() {
         document.body.style.pointerEvents = '';
     }, 300); // Match CSS transition duration
 }
+*/
 
 // ...rest of your existing code remains the same...
