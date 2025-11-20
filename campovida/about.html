@@ -57,6 +57,7 @@
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
                         'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.3s ease-out',
                     }
                 }
             }
@@ -73,34 +74,6 @@
             background-image: radial-gradient(circle at 1px 1px, rgba(45, 80, 22, 0.1) 1px, transparent 0);
             background-size: 20px 20px;
         }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-        .modal.show {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 0.3s ease;
-        }
-        .notification.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -111,7 +84,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-3">
-                        <img src="frontend/public/img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center" style="display: none;">
                             <span class="text-white font-bold text-sm">CV</span>
                         </div>
@@ -166,7 +139,7 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 animate-slide-up">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors">Home</a>
                 <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors">Products</a>
@@ -236,12 +209,12 @@
                 <div class="relative animate-fade-in" style="animation-delay: 0.2s;">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-4">
-                            <img src="frontend/public/img/dorm.jpg" alt="Farm View" class="w-full h-48 object-cover rounded-xl shadow-lg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzZiNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkZhcm0gVmlldzwvdGV4dD48L3N2Zz4=';">
-                            <img src="frontend/public/img/partners.jpg" alt="Farmers" class="w-full h-32 object-cover rounded-xl shadow-lg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzZiNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkZhcm1lcnM8L3RleHQ+PC9zdmc+';">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Farm View" class="w-full h-48 object-cover rounded-xl shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Farmers" class="w-full h-32 object-cover rounded-xl shadow-lg">
                         </div>
                         <div class="space-y-4 pt-8">
-                            <img src="frontend/public/img/plaque.jpg" alt="Certification" class="w-full h-32 object-cover rounded-xl shadow-lg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzZiNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkNlcnRpZmljYXRpb248L3RleHQ+PC9zdmc+';">
-                            <img src="frontend/public/img/vission-mission-objectives.jpg" alt="Mission" class="w-full h-48 object-cover rounded-xl shadow-lg" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzZiNzI4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk1pc3Npb248L3RleHQ+PC9zdmc+';">
+                            <img src="https://images.unsplash.com/photo-1591284708278-46538132746b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Certification" class="w-full h-32 object-cover rounded-xl shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mission" class="w-full h-48 object-cover rounded-xl shadow-lg">
                         </div>
                     </div>
                 </div>
@@ -389,19 +362,103 @@
         </div>
     </section>
 
-    <!-- Include shared components -->
-    <div id="sharedComponents"></div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center" style="display: none;">
+                            <span class="text-white font-bold text-sm">CV</span>
+                        </div>
+                        <span class="text-xl font-bold">Campo Vida</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Fresh, organic produce delivered from sustainable farms to your table.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
 
-    <!-- Notification -->
-    <div id="notification" class="notification bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
-        <div class="flex items-center space-x-2">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span id="notificationText">Success!</span>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products.html?category=vegetables" class="text-gray-400 hover:text-white transition-colors">Vegetables</a></li>
+                        <li><a href="products.html?category=fruits" class="text-gray-400 hover:text-white transition-colors">Fruits</a></li>
+                        <li><a href="products.html?category=herbs" class="text-gray-400 hover:text-white transition-colors">Herbs & Spices</a></li>
+                        <li><a href="products.html?category=dairy" class="text-gray-400 hover:text-white transition-colors">Dairy Products</a></li>
+                        <li><a href="products.html?category=seasonal" class="text-gray-400 hover:text-white transition-colors">Seasonal Boxes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Benguet, Philippines</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+63 917 123 4567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@campovida.ph</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Campo Vida. All rights reserved. | Made with ❤️ for sustainable agriculture.</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <script src="js/shared.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Demo buttons interaction
+        const demoButtons = ['searchBtn', 'wishlistBtn', 'cartBtn', 'loginBtn', 'mobileCartBtn', 'mobileLoginBtn'];
+        demoButtons.forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('This feature is not available in the static demo.');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

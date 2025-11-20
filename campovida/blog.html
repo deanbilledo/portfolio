@@ -57,6 +57,7 @@
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
                         'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.3s ease-out',
                     }
                 }
             }
@@ -73,37 +74,12 @@
             background-image: radial-gradient(circle at 1px 1px, rgba(45, 80, 22, 0.1) 1px, transparent 0);
             background-size: 20px 20px;
         }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-        .modal.show {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateX(100%);
+        .blog-card {
             transition: all 0.3s ease;
         }
-        .notification.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .category-tab.active {
-            background-color: #2d5016;
-            color: white;
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         .line-clamp-3 {
             display: -webkit-box;
@@ -121,7 +97,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-3">
-                        <img src="frontend/public/img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center" style="display: none;">
                             <span class="text-white font-bold text-sm">CV</span>
                         </div>
@@ -176,7 +152,7 @@
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 animate-slide-up">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors">Home</a>
                 <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors">Products</a>
@@ -216,7 +192,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-8">Featured Article</h2>
             <div id="featuredPost" class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl overflow-hidden shadow-xl">
-                <!-- Featured post will be loaded here -->
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 h-64 md:h-auto relative">
+                        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sustainable Farming" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white">
+                        <div class="flex items-center space-x-4 mb-4 text-primary-100 text-sm">
+                            <span class="bg-accent-600 px-3 py-1 rounded-full text-white font-bold">Farming</span>
+                            <span><i class="far fa-calendar-alt mr-2"></i>July 15, 2024</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">The Future of Sustainable Agriculture in Benguet</h3>
+                        <p class="text-primary-100 mb-6 line-clamp-3">
+                            Discover how local farmers are adopting new organic methods to preserve the soil and produce healthier crops for future generations.
+                        </p>
+                        <button class="read-more-btn inline-flex items-center text-white font-semibold hover:text-accent-300 transition-colors">
+                            Read Full Article <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -228,23 +221,17 @@
             <div class="flex flex-col md:flex-row gap-6 items-center justify-between mb-8">
                 <!-- Category Tabs -->
                 <div class="flex flex-wrap gap-2">
-                    <button class="category-tab active px-4 py-2 rounded-full text-sm font-medium transition-colors" data-category="all">
+                    <button class="category-tab active px-4 py-2 rounded-full text-sm font-medium bg-primary-600 text-white transition-colors">
                         All Posts
                     </button>
-                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors" data-category="farming">
+                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors">
                         Farming
                     </button>
-                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors" data-category="sustainability">
+                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors">
                         Sustainability
                     </button>
-                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors" data-category="recipes">
+                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors">
                         Recipes
-                    </button>
-                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors" data-category="community">
-                        Community
-                    </button>
-                    <button class="category-tab px-4 py-2 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-100 transition-colors" data-category="tips">
-                        Tips & Guides
                     </button>
                 </div>
 
@@ -258,7 +245,71 @@
 
             <!-- Blog Posts Grid -->
             <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Posts will be loaded here by JavaScript -->
+                <!-- Post 1 -->
+                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Gardening Tips" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm">
+                            <span class="text-primary-700 font-bold text-sm">JUL 10</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xs font-bold text-primary-600 bg-primary-50 px-2 py-1 rounded-full">Tips & Guides</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">5 Tips for Starting Your Organic Garden</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Want to grow your own food? Here are five essential tips for beginners to start their own organic garden at home.
+                        </p>
+                        <button class="read-more-btn text-primary-600 font-semibold hover:text-primary-700 transition-colors text-sm">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Healthy Salad Recipes" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm">
+                            <span class="text-primary-700 font-bold text-sm">JUL 05</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xs font-bold text-primary-600 bg-primary-50 px-2 py-1 rounded-full">Recipes</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Summer Salad Recipes</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Beat the heat with these refreshing and nutritious salad recipes using fresh ingredients from Campo Vida.
+                        </p>
+                        <button class="read-more-btn text-primary-600 font-semibold hover:text-primary-700 transition-colors text-sm">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Post 3 -->
+                <div class="blog-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Community Market" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-sm">
+                            <span class="text-primary-700 font-bold text-sm">JUN 28</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xs font-bold text-primary-600 bg-primary-50 px-2 py-1 rounded-full">Community</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Supporting Local Farmers</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Why buying local matters more than ever and how it impacts our community's economy and health.
+                        </p>
+                        <button class="read-more-btn text-primary-600 font-semibold hover:text-primary-700 transition-colors text-sm">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Load More Button -->
@@ -287,29 +338,148 @@
         </div>
     </section>
 
-    <!-- Article Modal -->
-    <div id="articleModal" class="modal">
-        <div class="bg-white rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-            <div id="articleModalContent">
-                <!-- Article content will be loaded here -->
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center" style="display: none;">
+                            <span class="text-white font-bold text-sm">CV</span>
+                        </div>
+                        <span class="text-xl font-bold">Campo Vida</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Fresh, organic produce delivered from sustainable farms to your table.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products.html?category=vegetables" class="text-gray-400 hover:text-white transition-colors">Vegetables</a></li>
+                        <li><a href="products.html?category=fruits" class="text-gray-400 hover:text-white transition-colors">Fruits</a></li>
+                        <li><a href="products.html?category=herbs" class="text-gray-400 hover:text-white transition-colors">Herbs & Spices</a></li>
+                        <li><a href="products.html?category=dairy" class="text-gray-400 hover:text-white transition-colors">Dairy Products</a></li>
+                        <li><a href="products.html?category=seasonal" class="text-gray-400 hover:text-white transition-colors">Seasonal Boxes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Benguet, Philippines</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+63 917 123 4567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@campovida.ph</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Campo Vida. All rights reserved. | Made with ❤️ for sustainable agriculture.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Include shared components -->
-    <div id="sharedComponents"></div>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-    <!-- Notification -->
-    <div id="notification" class="notification bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
-        <div class="flex items-center space-x-2">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span id="notificationText">Success!</span>
-        </div>
-    </div>
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
-    <script src="js/shared.js"></script>
-    <script src="js/blog.js"></script>
+        // Demo buttons interaction
+        const demoButtons = ['searchBtn', 'wishlistBtn', 'cartBtn', 'loginBtn', 'mobileCartBtn', 'mobileLoginBtn'];
+        demoButtons.forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('This feature is not available in the static demo.');
+                });
+            }
+        });
+
+        // Read More buttons
+        const readMoreBtns = document.querySelectorAll('.read-more-btn');
+        readMoreBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Full article is not available in the static demo.');
+            });
+        });
+
+        // Load More button
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                alert('No more articles to load in the static demo.');
+            });
+        }
+
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for subscribing! (Demo only)');
+                newsletterForm.reset();
+            });
+        }
+
+        // Category buttons (visual only)
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        categoryTabs.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                categoryTabs.forEach(b => {
+                    b.classList.remove('active', 'bg-primary-600', 'text-white');
+                    b.classList.add('text-gray-600', 'bg-white');
+                });
+                
+                // Add active class to clicked
+                btn.classList.remove('text-gray-600', 'bg-white');
+                btn.classList.add('active', 'bg-primary-600', 'text-white');
+                
+                // alert('Filtering is not available in the static demo.');
+            });
+        });
+    </script>
 </body>
 </html>

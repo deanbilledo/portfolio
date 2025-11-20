@@ -86,33 +86,11 @@
         .product-card:hover {
             transform: translateY(-5px);
         }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
+        .category-pill {
+            transition: all 0.2s ease;
         }
-        .modal.show {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 0.3s ease;
-        }
-        .notification.show {
-            opacity: 1;
-            transform: translateX(0);
+        .category-pill:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -124,7 +102,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-3">
-                        <img src="frontend/public/img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center" style="display: none;">
                             <span class="text-white font-bold text-sm">CV</span>
                         </div>
@@ -254,33 +232,358 @@
 
             <!-- Products Grid -->
             <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Products will be populated by JavaScript -->
-            </div>
+                <!-- Product 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/20250715_132607.jpg" alt="Highland Vegetables" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Organic
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Vegetables</p>
+                                <h3 class="text-lg font-bold text-gray-900">Highland Vegetables</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">1kg</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Freshly harvested mixed vegetables from our partner farms in Benguet.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱150.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button id="loadMoreBtn" class="hidden btn-primary px-8 py-4 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all">
-                    <i class="fas fa-plus mr-2"></i>
-                    Load More Products
-                </button>
+                <!-- Product 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/pineapple.jpg" alt="Fresh Pineapple" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Organic
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Fruits</p>
+                                <h3 class="text-lg font-bold text-gray-900">Fresh Pineapple</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">1pc</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Sweet and juicy pineapples grown in rich volcanic soil.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱80.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/flower-1.jpg" alt="Cut Flowers" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-pink-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Fresh
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Flowers</p>
+                                <h3 class="text-lg font-bold text-gray-900">Cut Flowers</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">Bundle</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Beautiful assortment of freshly cut flowers for any occasion.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱250.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/20250709_153424.jpg" alt="Fresh Strawberries" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Organic
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Fruits</p>
+                                <h3 class="text-lg font-bold text-gray-900">Fresh Strawberries</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">500g</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Sweet, red, and juicy strawberries picked at peak ripeness.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱300.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/20250715_132621.jpg" alt="Organic Lettuce" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Organic
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Vegetables</p>
+                                <h3 class="text-lg font-bold text-gray-900">Organic Lettuce</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">500g</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Crisp and fresh lettuce, perfect for your daily salads.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱120.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Farm Fresh Eggs" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Free Range
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Dairy & Eggs</p>
+                                <h3 class="text-lg font-bold text-gray-900">Farm Fresh Eggs</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">1 Dozen</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Free-range eggs from happy, healthy chickens.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱220.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fresh Milk" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Fresh
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Dairy & Eggs</p>
+                                <h3 class="text-lg font-bold text-gray-900">Fresh Milk</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">1 Liter</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Pure, unpasteurized milk from grass-fed cows.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱180.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Carrots" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                            Organic
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="text-sm text-green-600 font-medium mb-1">Vegetables</p>
+                                <h3 class="text-lg font-bold text-gray-900">Organic Carrots</h3>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-lg">1kg</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">Crunchy and sweet organic carrots, rich in vitamins.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₱140.00</span>
+                            <button class="bg-primary-600 text-white p-2 rounded-lg hover:bg-primary-700 transition-colors" title="Add to Cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Include shared components -->
-    <div id="sharedComponents"></div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="img/campo-vida-logo.jpeg" alt="Campo Vida Logo" class="w-10 h-10 object-cover rounded-full border-2 border-primary-200" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center" style="display: none;">
+                            <span class="text-white font-bold text-sm">CV</span>
+                        </div>
+                        <span class="text-xl font-bold">Campo Vida</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Fresh, organic produce delivered from sustainable farms to your table.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
 
-    <!-- Notification -->
-    <div id="notification" class="notification bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
-        <div class="flex items-center space-x-2">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span id="notificationText">Success!</span>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products.html?category=vegetables" class="text-gray-400 hover:text-white transition-colors">Vegetables</a></li>
+                        <li><a href="products.html?category=fruits" class="text-gray-400 hover:text-white transition-colors">Fruits</a></li>
+                        <li><a href="products.html?category=herbs" class="text-gray-400 hover:text-white transition-colors">Herbs & Spices</a></li>
+                        <li><a href="products.html?category=dairy" class="text-gray-400 hover:text-white transition-colors">Dairy Products</a></li>
+                        <li><a href="products.html?category=seasonal" class="text-gray-400 hover:text-white transition-colors">Seasonal Boxes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Benguet, Philippines</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <span>+63 917 123 4567</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@campovida.ph</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Campo Vida. All rights reserved. | Made with ❤️ for sustainable agriculture.</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
-    <script src="js/shared.js"></script>
-    <script src="js/products.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Demo buttons interaction
+        const demoButtons = ['searchBtn', 'wishlistBtn', 'cartBtn', 'loginBtn', 'mobileCartBtn', 'mobileLoginBtn'];
+        demoButtons.forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('This feature is not available in the static demo.');
+                });
+            }
+        });
+
+        // Add to cart buttons in static grid
+        const addToCartBtns = document.querySelectorAll('button[title="Add to Cart"]');
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Shopping cart is not available in the static demo.');
+            });
+        });
+
+        // Category buttons interaction (visual only)
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                categoryBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary-600', 'text-white', 'shadow-lg');
+                    b.classList.add('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+                });
+                
+                // Add active class to clicked
+                btn.classList.remove('bg-white', 'text-gray-700', 'border-2', 'border-gray-200');
+                btn.classList.add('active', 'bg-primary-600', 'text-white', 'shadow-lg');
+                
+                // In a real app this would filter, here we just show alert or do nothing
+                // alert('Filtering is not available in the static demo.');
+            });
+        });
+    </script>
 </body>
 </html>
