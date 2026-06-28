@@ -1,24 +1,26 @@
-# Dean Reight F. Billedo - Portfolio
+# Dean Reight F. Billedo Portfolio
 
-A modern, responsive portfolio website showcasing my journey as a Computer Science student and developer at Western Mindanao State University.
+This repository contains the source code for my personal portfolio website. The site presents my background, technical skills, selected projects, and contact information in a modern and responsive layout.
 
-## 🌟 Features
+## Overview
 
-- **Responsive Design** - Works seamlessly across all devices
-- **Dark/Light Theme Toggle** - User preference-based theme switching
-- **Mac-style Terminal Interface** - Unique hero section with terminal aesthetics
-- **Smooth Animations** - Enhanced user experience with CSS transitions
-- **Project Showcase** - Interactive project cards with live demos
-- **Skills Visualization** - Organized skill categories with proficiency levels
-- **Contact Form** - Functional contact form with Formspree integration
+The portfolio is designed to highlight my work as a Computer Science student and aspiring developer. It combines a polished visual presentation with clear sections for projects, skills, and professional contact details.
 
-## 🚀 Live Demo
+## Features
 
-Visit the live portfolio: reigh.site
+- Responsive design for desktop, tablet, and mobile devices
+- Modern visual styling with a clean, contemporary layout
+- Interactive sections for showcasing projects and capabilities
+- Contact information and external links for professional networking
+- Structured content that is easy to maintain and extend
 
-## 📂 Project Structure
+## Live Demo
 
-```
+Visit the portfolio at: reigh.site
+
+## Project Structure
+
+```text
 portfolio/
 ├── index.html          # Main portfolio page
 ├── style.css           # Main stylesheet
@@ -32,156 +34,120 @@ portfolio/
 └── README.md
 ```
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Frontend
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with CSS Grid and Flexbox
-- **JavaScript** - Interactive functionality
-- **Responsive Design** - Mobile-first approach
+- HTML5
+- CSS3
+- JavaScript
+- Responsive web design principles
 
-### Skills Showcased
-- **Programming Languages**: Python, JavaScript, Java, C++, PHP, SQL
-- **Frontend Frameworks**: React.js, Vue.js, Next.js
-- **Styling**: Tailwind CSS, Bootstrap, Sass/SCSS
-- **Tools**: Git, Docker, XAMPP, Streamlit, Firebase
-- **AI/ML**: TensorFlow, Ollama, LangChain, FAISS
+### Skills Highlighted
+- Python
+- JavaScript
+- Java
+- C++
+- PHP
+- SQL
+- React.js
+- Vue.js
+- Next.js
+- Tailwind CSS
+- Bootstrap
+- Sass/SCSS
+- Git
+- Docker
+- XAMPP
+- Streamlit
+- Firebase
+- TensorFlow
+- Ollama
+- LangChain
+- FAISS
 
-## 🎯 Featured Projects
+## Featured Projects
 
-### 1. Thesis-RAG-Optimized-Procurement-Documents
-**Status**: In Progress  
-**Description**: Offline-capable AI system for searching and analyzing public procurement documents using RAG (Retrieval-Augmented Generation) technology.
+### Thesis-RAG-Optimized-Procurement-Documents
+Status: In Progress
 
-**Tech Stack**: Python, Streamlit, LangChain, FAISS  
-**Demo**: [GitHub Repository](https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public)
+An offline-capable AI system for searching and analyzing public procurement documents using retrieval-augmented generation techniques.
 
-### 2. Pet Care Connect
-**Status**: Completed  
-**Description**: Web platform connecting pet owners with veterinary and grooming services through a centralized appointment system.
+Tech Stack: Python, Streamlit, LangChain, FAISS
 
-**Tech Stack**: HTML, CSS, JavaScript, PHP  
-**Demo**: [Live Site](http://www.petcareconnect.site) | [GitHub](https://github.com/deanbilledo/PetCareConnect)
+Demo: [GitHub Repository](https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public)
 
-### 3. DreamPC
-**Status**: Completed  
-**Description**: PC building and customization platform with compatibility checking and price optimization features.
+### Pet Care Connect
+Status: Completed
 
-**Tech Stack**: HTML, CSS, JavaScript, PHP
+A web platform that connects pet owners with veterinary and grooming services through a centralized appointment system.
 
-### 4. Cyberpunk Portfolio
-**Status**: Completed  
-**Description**: Futuristic neon-themed portfolio with glitch effects and cyber-inspired UI components.
+Tech Stack: HTML, CSS, JavaScript, PHP
 
-**Tech Stack**: HTML5, CSS3, JavaScript, GSAP  
-**Demo**: [Live Demo](/cyber/index.html) | [GitHub](https://github.com/deanbilledo/cyber)
+Demo: [Live Site](http://www.petcareconnect.site) | [GitHub](https://github.com/deanbilledo/PetCareConnect)
 
-## 🎨 Design Features
+### DreamPC
+Status: Completed
 
-- **Mac-style Window Interface** - Terminal-inspired hero section
-- **Bento Grid Layout** - Modern card-based about section
-- **Glassmorphism Effects** - Subtle transparency and blur effects
-- **Smooth Transitions** - Enhanced user interactions
-- **Progressive Web App Ready** - Optimized for performance
+A platform for PC building and customization with compatibility checking and price optimization features.
 
-## 📱 Responsive Breakpoints
+Tech Stack: HTML, CSS, JavaScript, PHP
 
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px
-- **Mobile**: 320px - 767px
+### Cyberpunk Portfolio
+Status: Completed
 
-## 🚀 Getting Started
+A futuristic portfolio experience with a neon-inspired visual style and interactive effects.
+
+Tech Stack: HTML5, CSS3, JavaScript, GSAP
+
+Demo: [Live Demo](/cyber/index.html) | [GitHub](https://github.com/deanbilledo/cyber)
+
+## Getting Started
 
 ### Prerequisites
-- Web browser (Chrome, Firefox, Safari, Edge)
-- Local web server (optional, for development)
+- A modern web browser
+- Optional: a local web server for development
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone the repository:
    ```bash
    git clone https://github.com/deanbilledo/portfolio.git
    cd portfolio
    ```
 
-2. **Open locally**
+2. Open the project locally:
    ```bash
-   # Option 1: Direct file opening
+   # Option 1: Open index.html directly
    open index.html
-   
-   # Option 2: Local server (Python)
+
+   # Option 2: Start a local server with Python
    python -m http.server 8000
-   
-   # Option 3: Local server (Node.js)
+
+   # Option 3: Start a local server with Node.js
    npx serve .
    ```
 
-3. **View in browser**
-   Navigate to `http://localhost:8000` or open `index.html` directly
+3. View the site in your browser at http://localhost:8000 or open index.html directly.
 
-## 📧 Contact Form Setup
+## Contact Form Setup
 
-The contact form uses [Formspree](https://formspree.io/) for handling form submissions:
+The contact form uses Formspree for submission handling.
 
-1. Create a Formspree account
-2. Replace the form action URL in `index.html`:
-   ```html
-   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
+1. Create a Formspree account.
+2. Replace the form action URL in index.html with your own endpoint.
 
-## 🎯 Performance Optimizations
+```html
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+```
 
-- **Lazy Loading** - Images load on demand
-- **Minified Assets** - Optimized CSS and JavaScript
-- **Efficient Grid Layouts** - CSS Grid and Flexbox for responsive design
-- **Semantic HTML** - Better SEO and accessibility
+## About Me
 
-## 🌐 Browser Support
+I am Dean Reight F. Billedo, a Computer Science student at Western Mindanao State University with interests in artificial intelligence, web development, research, and continuous learning.
 
-- Chrome 80+
-- Firefox 75+
-- Safari 13+
-- Edge 80+
+## Connect With Me
 
-## 📈 Future Enhancements
+- Email: [deanbilledo@gmail.com](mailto:deanbilledo@gmail.com)
+- GitHub: [@deanbilledo](https://github.com/deanbilledo)
+- LinkedIn: [/in/reighling](https://linkedin.com/in/reighling)
 
-- [ ] Blog section integration
-- [ ] Project filtering and search
-- [ ] Animation library integration (GSAP)
-- [ ] Progressive Web App features
-- [ ] Multi-language support
-
-## 🤝 Contributing
-
-While this is a personal portfolio, suggestions and feedback are welcome!
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 About Me
-
-I'm Dean Reight F. Billedo, a Computer Science student at Western Mindanao State University passionate about:
-
-- 🤖 AI/ML Development
-- 🌐 Full-Stack Web Development
-- 🎮 Gaming and Strategy
-- 📚 Continuous Learning
-- 🔬 Research and Innovation
-
-## 📞 Connect With Me
-
-- **Email**: [deanbilledo@gmail.com](mailto:deanbilledo@gmail.com)
-- **GitHub**: [@deanbilledo](https://github.com/deanbilledo)
-- **LinkedIn**: [/in/reighling](https://linkedin.com/in/reighling)
-
----
-
-⭐ If you found this portfolio interesting, please consider giving it a star!
-
-**Built with ❤️ and AI by Dean Reight F. Billedo**
+This portfolio is maintained as a personal and professional showcase of my work and development interests.
