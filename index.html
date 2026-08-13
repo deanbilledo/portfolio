@@ -221,19 +221,29 @@
                         <p class="eyebrow"><span class="eyebrow-index">★</span> Featured case study — published paper</p>
                         <div class="featured-project-grid">
                             <div class="featured-project-image">
-                                <img src="images/thesis1.png" alt="Interface of the RAG procurement document system" class="project-screenshot" id="thesisImage">
+                                <img src="images/paper-cover.png" alt="First page of the published paper, Optimizing Retrieval-Augmented Generation for Querying Locally Stored Public Procurement Documents Using Small Language Models" class="project-screenshot" id="thesisImage">
                             </div>
                             <div class="featured-project-content">
                                 <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed · Published</p>
                                 <h3 class="featured-project-title">Optimizing Retrieval-Augmented Generation for Querying Locally Stored Public Procurement Documents Using Small Language Models</h3>
-                                <p class="featured-project-desc">An offline-capable RAG system for querying Philippine public procurement documents, co-authored with three WMSU CCS teammates. Published in IEEE proceedings and presented at the 2nd International Conference on Computational Intelligence Approaches and Applications (ICCIAA 2026).</p>
-                                <ul class="featured-project-points">
-                                    <li>QLoRA 4-bit fine-tuning of three small language models — Gemma-3-1B, LLaMA-3.2-1B, and Phi-1.5-1B — within a 4GB VRAM budget</li>
-                                    <li>Hierarchical hybrid retrieval with section-aware chunking and a ChromaDB vector store</li>
-                                    <li>89.3% overall accuracy vs. a 71.3% baseline (18% improvement), statistically significant at p = 0.0029</li>
-                                    <li>Runs fully offline on a 1.5GB memory footprint; rated 4.38/5.0 by five procurement officers in expert validation</li>
-                                </ul>
-                                <p class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span><span class="tech-tag">LangChain</span><span class="tech-tag">FAISS</span><span class="tech-tag">ChromaDB</span></p>
+                                <p class="featured-project-desc">An offline-capable RAG system for Philippine procurement documents — IEEE-published, presented at ICCIAA 2026, co-authored with three WMSU CCS teammates.</p>
+
+                                <dl class="featured-stats">
+                                    <div class="featured-stat">
+                                        <dt>Accuracy</dt>
+                                        <dd>89.3% <span>vs. 71.3% baseline</span></dd>
+                                    </div>
+                                    <div class="featured-stat">
+                                        <dt>Footprint</dt>
+                                        <dd>1.5GB <span>fully offline</span></dd>
+                                    </div>
+                                    <div class="featured-stat">
+                                        <dt>Expert rating</dt>
+                                        <dd>4.38/5 <span>procurement officers</span></dd>
+                                    </div>
+                                </dl>
+
+                                <p class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">LangChain</span><span class="tech-tag">FAISS</span><span class="tech-tag">ChromaDB</span></p>
                                 <div class="project-links">
                                     <a href="assets/Billedo-et-al-2026-RAG-Procurement-SLM.pdf" class="project-link primary" download>Read the paper</a>
                                     <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source code</a>
