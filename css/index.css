@@ -394,6 +394,31 @@ label:focus-visible {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: var(--sp-8) 20px var(--sp-9);
+    display: grid;
+    gap: var(--sp-7);
+}
+
+.portrait-frame {
+    width: 9rem;
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--line-strong);
+    background: var(--card);
+    position: relative;
+    overflow: hidden;
+}
+
+.portrait-img { width: 100%; height: 100%; object-fit: cover; }
+
+.portrait-fallback {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--ink-faint);
 }
 
 .hero-heading {
@@ -459,7 +484,18 @@ label:focus-visible {
 }
 
 @media (min-width: 1000px) {
-    .hero { padding: var(--sp-9) 32px var(--sp-10); }
+    .hero {
+        padding: var(--sp-9) 32px var(--sp-10);
+        grid-template-columns: minmax(0, 1fr) 14rem;
+        align-items: start;
+        gap: var(--sp-8);
+    }
+
+    .portrait-frame {
+        width: 100%;
+        order: 2;
+        margin-top: 2.6rem;
+    }
 }
 
 /* ==========================================================================
@@ -624,6 +660,64 @@ label:focus-visible {
 /* ==========================================================================
    Work / Projects (02)
    ========================================================================== */
+.featured-project {
+    padding-bottom: var(--sp-7);
+    margin-bottom: var(--sp-7);
+    border-bottom: 2px solid var(--ink);
+}
+
+.featured-project-grid {
+    display: grid;
+    gap: var(--sp-5);
+}
+
+.featured-project-image {
+    background: var(--card);
+    border: 1px solid var(--line);
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.featured-project-title {
+    font-size: var(--fs-600);
+    margin-bottom: var(--sp-3);
+    max-width: 28ch;
+}
+
+.featured-project-desc {
+    color: var(--ink-soft);
+    font-size: var(--fs-400);
+    margin-bottom: var(--sp-4);
+}
+
+.featured-project-points {
+    margin-bottom: var(--sp-4);
+}
+
+.featured-project-points li {
+    font-size: var(--fs-300);
+    color: var(--ink);
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+    max-width: 36rem;
+}
+
+.featured-project-points li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+@media (min-width: 800px) {
+    .featured-project-grid {
+        grid-template-columns: 1.1fr 1fr;
+        gap: var(--sp-7);
+        align-items: center;
+    }
+}
+
 .work-list { border-top: 1px solid var(--line); }
 
 .project-card {
@@ -1047,3 +1141,44 @@ label:focus-visible {
 .project-modal-tech-tags .tech-tag::after { content: none; }
 
 .project-modal-links { display: flex; gap: var(--sp-4); }
+
+/* ==========================================================================
+   Scroll reveal — progressive enhancement only.
+   Content is fully visible without JS; html.js is set by an inline
+   head script, so nothing depends on this for basic readability.
+   ========================================================================== */
+html.js .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+html.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ==========================================================================
+   Print — for the "Download CV" crowd who print instead
+   ========================================================================== */
+@media print {
+    .navbar, .progress-container, .scroll-to-top, .hire-block,
+    .nav-panel, .skip-link, .contact-form-wrap, .project-modal { display: none !important; }
+
+    body { background: #fff; color: #000; font-size: 11pt; }
+
+    .main-container { padding-top: 0; }
+
+    .section { border-top: 1px solid #999; padding: 24px 0; max-width: 100%; }
+
+    .section-grid { grid-template-columns: 1fr !important; }
+
+    a { color: #000; text-decoration: underline; }
+
+    a[href^="http"]::after,
+    a[href^="mailto"]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+
+    .portrait-frame { width: 2.2cm; }
+
+    .work-list, .featured-project { page-break-inside: avoid; }
+}

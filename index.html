@@ -3,13 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add('js');</script>
     <title>Dean Reight Billedo — Software Developer, Zamboanga City</title>
     <meta name="description" content="Dean Reight Billedo — software developer in Zamboanga City, PH. Web development, custom software, and AI/ML integration through Billedo Software Development Services.">
+    <link rel="canonical" href="https://deanbilledo.github.io/">
+
+    <!-- Open Graph / link previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dean Reight Billedo — Software Developer">
+    <meta property="og:description" content="Web development, custom software, and AI/ML integration in Zamboanga City, PH — Billedo Software Development Services.">
+    <meta property="og:url" content="https://deanbilledo.github.io/">
+    <meta property="og:image" content="https://deanbilledo.github.io/images/thesis1.png">
+    <meta property="og:locale" content="en_PH">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dean Reight Billedo — Software Developer">
+    <meta name="twitter:description" content="Web development, custom software, and AI/ML integration in Zamboanga City, PH.">
+    <meta name="twitter:image" content="https://deanbilledo.github.io/images/thesis1.png">
+
     <link rel="icon" href="images/favicon.ico.jpg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dean Reight F. Billedo",
+      "alternateName": "Dean Billedo",
+      "jobTitle": "Software Developer",
+      "url": "https://deanbilledo.github.io/",
+      "image": "https://deanbilledo.github.io/images/dean-portrait.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zamboanga City",
+        "addressCountry": "PH"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Western Mindanao State University"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Billedo Software Development Services"
+      },
+      "sameAs": [
+        "https://github.com/deanbilledo",
+        "https://linkedin.com/in/reighling",
+        "https://www.facebook.com/reigh.billedo/"
+      ]
+    }
+    </script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -52,28 +99,35 @@
 
         <!-- Introduction -->
         <section class="hero" id="hero" aria-labelledby="hero-heading">
-            <p class="eyebrow"><span class="eyebrow-index">00</span> Introduction</p>
-            <h1 id="hero-heading" class="hero-heading">Dean Reight <em>Billedo</em></h1>
-            <p class="hero-role">Software developer &amp; founder of <span class="brand-inline">Billedo Software Development Services</span></p>
-            <p class="hero-lead">I design and build web applications, custom software, and AI-assisted tools for small teams and individuals — grounded in published research on retrieval-augmented generation.</p>
+            <div class="hero-text">
+                <p class="eyebrow"><span class="eyebrow-index">00</span> Introduction</p>
+                <h1 id="hero-heading" class="hero-heading">Dean Reight <em>Billedo</em></h1>
+                <p class="hero-role">Software developer &amp; founder of <span class="brand-inline">Billedo Software Development Services</span></p>
+                <p class="hero-lead">I design and build web applications, custom software, and AI-assisted tools for small teams and individuals — grounded in published research on retrieval-augmented generation.</p>
 
-            <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Available for freelance work — usually replies within a day</p>
+                <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Available for freelance work — usually replies within a day</p>
 
-            <div class="hero-actions">
-                <a href="assets/Dean-Billedo-CV.pdf" class="btn btn-primary" download>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-                    Download CV
-                </a>
-                <a href="#contact" class="btn btn-text">Get in touch <span aria-hidden="true">→</span></a>
+                <div class="hero-actions">
+                    <a href="assets/Dean-Billedo-CV.pdf" class="btn btn-primary" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                        Download CV
+                    </a>
+                    <a href="#contact" class="btn btn-text">Get in touch <span aria-hidden="true">→</span></a>
+                </div>
+
+                <p class="hero-meta">Zamboanga City, Philippines · B.S. Computer Science, Western Mindanao State University · IEEE-published thesis, ICCIAA 2026</p>
             </div>
 
-            <p class="hero-meta">Zamboanga City, Philippines · B.S. Computer Science, Western Mindanao State University · IEEE-published thesis, ICCIAA 2026</p>
+            <div class="portrait-frame">
+                <img src="images/dean-portrait.jpg" alt="Portrait of Dean Reight Billedo" class="portrait-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="portrait-fallback" aria-hidden="true">DB</div>
+            </div>
         </section>
 
         <!-- Services -->
         <section class="section" id="services" aria-labelledby="services-heading">
             <div class="section-grid">
-                <header class="section-head">
+                <header class="section-head reveal">
                     <p class="eyebrow"><span class="eyebrow-index">01</span> Services</p>
                     <h2 id="services-heading" class="section-title">What I can build for you</h2>
                     <p class="section-lead">Billedo Software Development Services — freelance work on the same stack behind the projects in this portfolio.</p>
@@ -81,7 +135,7 @@
 
                 <div class="section-body">
                     <ol class="services-list">
-                        <li class="service-row">
+                        <li class="service-row reveal">
                             <div class="service-row-head">
                                 <span class="service-num">01</span>
                                 <h3 class="service-title">Web Development</h3>
@@ -98,7 +152,7 @@
                             </div>
                         </li>
 
-                        <li class="service-row">
+                        <li class="service-row reveal">
                             <div class="service-row-head">
                                 <span class="service-num">02</span>
                                 <h3 class="service-title">Custom Software Development</h3>
@@ -115,7 +169,7 @@
                             </div>
                         </li>
 
-                        <li class="service-row">
+                        <li class="service-row reveal">
                             <div class="service-row-head">
                                 <span class="service-num">03</span>
                                 <h3 class="service-title">AI/ML Integration</h3>
@@ -133,7 +187,7 @@
                         </li>
                     </ol>
 
-                    <div class="process-block">
+                    <div class="process-block reveal">
                         <h3 class="process-heading">How a project runs</h3>
                         <ol class="process-list">
                             <li><h4>Discovery</h4><p>We talk through what you need, your timeline, and your budget.</p></li>
@@ -142,7 +196,7 @@
                         </ol>
                     </div>
 
-                    <div class="hire-block" id="hire">
+                    <div class="hire-block reveal" id="hire">
                         <p class="eyebrow"><span class="eyebrow-index">→</span> Start a project</p>
                         <h3>Have something in mind?</h3>
                         <p>Tell me what you're trying to build — I'll reply with next steps and a rough estimate.</p>
@@ -155,32 +209,42 @@
         <!-- Work -->
         <section class="section" id="projects" aria-labelledby="work-heading">
             <div class="section-grid">
-                <header class="section-head">
+                <header class="section-head reveal">
                     <p class="eyebrow"><span class="eyebrow-index">02</span> Work</p>
                     <h2 id="work-heading" class="section-title">Selected projects</h2>
-                    <p class="section-lead">Nine builds, from a published thesis to freelance client sites. Newest first.</p>
+                    <p class="section-lead">A published thesis, a freelance case study, and seven other builds. Newest first.</p>
                 </header>
 
                 <div class="section-body">
-                    <ul class="work-list">
 
-                        <li class="project-card">
-                            <div class="project-image">
-                                <img src="images/thesis1.png" alt="Thesis RAG System" class="project-screenshot" id="thesisImage">
+                    <article class="featured-project reveal">
+                        <p class="eyebrow"><span class="eyebrow-index">★</span> Featured case study — published paper</p>
+                        <div class="featured-project-grid">
+                            <div class="featured-project-image">
+                                <img src="images/thesis1.png" alt="Interface of the RAG procurement document system" class="project-screenshot" id="thesisImage">
                             </div>
-                            <div class="project-content">
-                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
-                                <h3 class="project-title">RAG-Optimized Procurement Documents Using a Small Language Model</h3>
-                                <p class="project-description">An offline-capable system that lets users search and analyze public procurement documents in PDF format using AI. Published thesis work, presented at ICCIAA 2026.</p>
-                                <p class="project-tech"><span class="tech-tag">PUBLISHED</span><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span><span class="tech-tag">LangChain</span><span class="tech-tag">FAISS</span></p>
+                            <div class="featured-project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed · Published</p>
+                                <h3 class="featured-project-title">Optimizing Retrieval-Augmented Generation for Querying Locally Stored Public Procurement Documents Using Small Language Models</h3>
+                                <p class="featured-project-desc">An offline-capable RAG system for querying Philippine public procurement documents, co-authored with three WMSU CCS teammates. Published in IEEE proceedings and presented at the 2nd International Conference on Computational Intelligence Approaches and Applications (ICCIAA 2026).</p>
+                                <ul class="featured-project-points">
+                                    <li>QLoRA 4-bit fine-tuning of three small language models — Gemma-3-1B, LLaMA-3.2-1B, and Phi-1.5-1B — within a 4GB VRAM budget</li>
+                                    <li>Hierarchical hybrid retrieval with section-aware chunking and a ChromaDB vector store</li>
+                                    <li>89.3% overall accuracy vs. a 71.3% baseline (18% improvement), statistically significant at p = 0.0029</li>
+                                    <li>Runs fully offline on a 1.5GB memory footprint; rated 4.38/5.0 by five procurement officers in expert validation</li>
+                                </ul>
+                                <p class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span><span class="tech-tag">LangChain</span><span class="tech-tag">FAISS</span><span class="tech-tag">ChromaDB</span></p>
                                 <div class="project-links">
-                                    <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link primary">View demo</a>
+                                    <a href="assets/Billedo-et-al-2026-RAG-Procurement-SLM.pdf" class="project-link primary" download>Read the paper</a>
                                     <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source code</a>
                                 </div>
                             </div>
-                        </li>
+                        </div>
+                    </article>
 
-                        <li class="project-card">
+                    <ul class="work-list">
+
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img src="images/pcc1.jpg" alt="Pet Care Connect System" class="project-screenshot" id="petcareImage">
                             </div>
@@ -188,7 +252,7 @@
                                 <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
                                 <h3 class="project-title">Pet Care Connect</h3>
                                 <p class="project-description">A web-based platform connecting pet owners with local veterinary and grooming services through a centralized appointment system.</p>
-                                <p class="project-tech"><span class="tech-tag">Laravel</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Hostinger</span><span class="tech-tag">PHP</span></p>
+                                <p class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PHP</span></p>
                                 <div class="project-links">
                                     <a href="http://www.petcareconnect.site" class="project-link primary">View demo</a>
                                     <a href="https://github.com/deanbilledo/PetCareConnect" class="project-link">Source code</a>
@@ -196,7 +260,7 @@
                             </div>
                         </li>
 
-                        <li class="project-card">
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img src="images/dream1.png" alt="DreamPC System" class="project-screenshot" id="dreampcImage">
                             </div>
@@ -212,7 +276,7 @@
                             </div>
                         </li>
 
-                        <li class="project-card">
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img src="images/punk1.png" alt="Cyberpunk Portfolio" class="project-screenshot" id="cyberpunkImage">
                             </div>
@@ -228,7 +292,7 @@
                             </div>
                         </li>
 
-                        <li class="project-card">
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img src="images/bgrem1.png" alt="Background Remover" class="project-screenshot" id="backgrounremoverImage">
                             </div>
@@ -244,7 +308,7 @@
                             </div>
                         </li>
 
-                        <li class="project-card">
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img id="handImage" src="images/hand1.png" alt="Hand Gesture Presentation Tool" class="project-screenshot">
                             </div>
@@ -260,7 +324,7 @@
                             </div>
                         </li>
 
-                        <li class="project-card">
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img src="images/campo.png" alt="Campo Vida" class="project-screenshot" id="campovidaImage">
                             </div>
@@ -276,7 +340,7 @@
                             </div>
                         </li>
 
-                        <li class="project-card">
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img src="images/mnl.png" alt="Manila Tour Guide" class="project-screenshot" id="mnltourImage">
                             </div>
@@ -292,7 +356,7 @@
                             </div>
                         </li>
 
-                        <li class="project-card">
+                        <li class="project-card reveal">
                             <div class="project-image">
                                 <img src="images/rot.png" alt="Rotaract Club North" class="project-screenshot" id="rotaractImage">
                             </div>
@@ -316,7 +380,7 @@
         <!-- Skills -->
         <section class="section" id="skills" aria-labelledby="skills-heading">
             <div class="section-grid">
-                <header class="section-head">
+                <header class="section-head reveal">
                     <p class="eyebrow"><span class="eyebrow-index">03</span> Skills</p>
                     <h2 id="skills-heading" class="section-title">Toolkit</h2>
                     <p class="section-lead">Languages and tools I use most, grouped by where they show up in a project.</p>
@@ -324,7 +388,7 @@
 
                 <div class="section-body">
                     <div class="skills-body">
-                        <div class="skill-group">
+                        <div class="skill-group reveal">
                             <h3 class="skill-group-title">Languages</h3>
                             <ul class="skill-items">
                                 <li class="skill-item"><img src="svg/python.svg" alt="" class="skill-glyph">Python</li>
@@ -340,7 +404,7 @@
                             </ul>
                         </div>
 
-                        <div class="skill-group">
+                        <div class="skill-group reveal">
                             <h3 class="skill-group-title">Frontend</h3>
                             <ul class="skill-items">
                                 <li class="skill-item"><img src="svg/html.svg" alt="" class="skill-glyph">HTML5 / CSS3</li>
@@ -356,7 +420,7 @@
                             </ul>
                         </div>
 
-                        <div class="skill-group">
+                        <div class="skill-group reveal">
                             <h3 class="skill-group-title">Tools &amp; platforms</h3>
                             <ul class="skill-items">
                                 <li class="skill-item"><img src="svg/git.svg" alt="" class="skill-glyph">Git</li>
@@ -379,7 +443,7 @@
         <!-- About -->
         <section class="section" id="achievements" aria-labelledby="about-heading">
             <div class="section-grid">
-                <header class="section-head">
+                <header class="section-head reveal">
                     <p class="eyebrow"><span class="eyebrow-index">04</span> About</p>
                     <h2 id="about-heading" class="section-title">Beyond the code</h2>
                     <p class="section-lead">A few things worth knowing about how I work and what I'm chasing next.</p>
@@ -387,28 +451,28 @@
 
                 <div class="section-body">
                     <div class="about-body">
-                        <div class="about-note about-note--wide">
+                        <div class="about-note about-note--wide reveal">
                             <h3>My journey</h3>
                             <p>Started my programming journey in 2022 when I entered Western Mindanao State University. What began as curiosity about how websites work has evolved into a passion for creating meaningful digital solutions.</p>
                             <p class="about-note-meta">2022 — present</p>
                         </div>
-                        <div class="about-note">
+                        <div class="about-note reveal">
                             <h3>Research mindset</h3>
                             <p>My IEEE-published thesis involved AI and document processing. I like diving into emerging technologies and understanding how they solve real problems.</p>
                         </div>
-                        <div class="about-note">
+                        <div class="about-note reveal">
                             <h3>WMSU graduate</h3>
                             <p>B.S. Computer Science from Western Mindanao State University, balancing academic theory with practical project work.</p>
                         </div>
-                        <div class="about-note">
+                        <div class="about-note reveal">
                             <h3>Gaming, in moderation</h3>
                             <p>Strategy games, mostly — they scratch the same problem-solving itch as debugging.</p>
                         </div>
-                        <div class="about-note">
+                        <div class="about-note reveal">
                             <h3>A believer in good rest</h3>
                             <p>Quality sleep keeps me focused and creative when tackling complex problems.</p>
                         </div>
-                        <div class="about-note">
+                        <div class="about-note reveal">
                             <h3>What's next</h3>
                             <p>Growing Billedo Software Development Services and contributing to more AI/ML projects that make technology genuinely useful.</p>
                         </div>
@@ -420,14 +484,14 @@
         <!-- Contact -->
         <section class="section" id="contact" aria-labelledby="contact-heading">
             <div class="section-grid">
-                <header class="section-head">
+                <header class="section-head reveal">
                     <p class="eyebrow"><span class="eyebrow-index">05</span> Contact</p>
                     <h2 id="contact-heading" class="section-title">Let's talk</h2>
                     <p class="section-lead">For freelance or service inquiries, email works best — I check it daily.</p>
                 </header>
 
                 <div class="section-body">
-                    <div class="contact-columns">
+                    <div class="contact-columns reveal">
                         <div class="contact-info">
                             <ul class="contact-links">
                                 <li><a href="mailto:deanbilledo@gmail.com" class="contact-link">
@@ -501,35 +565,74 @@
     <script src="script.js"></script>
     <script>
       (function () {
+        // Mobile menu
         var toggle = document.getElementById('menuToggle');
         var btn = document.getElementById('menuBtn');
         var panel = document.getElementById('navPanel');
-        if (!toggle || !btn || !panel) return;
-
-        function setExpanded() {
-          btn.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false');
-        }
-        toggle.addEventListener('change', setExpanded);
-        btn.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggle.checked = !toggle.checked;
-            setExpanded();
-          }
-        });
-        panel.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            toggle.checked = false;
-            setExpanded();
+        if (toggle && btn && panel) {
+          var setExpanded = function () {
+            btn.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false');
+          };
+          toggle.addEventListener('change', setExpanded);
+          btn.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggle.checked = !toggle.checked;
+              setExpanded();
+            }
           });
-        });
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && toggle.checked) {
-            toggle.checked = false;
-            setExpanded();
-            btn.focus();
+          panel.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+              toggle.checked = false;
+              setExpanded();
+            });
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && toggle.checked) {
+              toggle.checked = false;
+              setExpanded();
+              btn.focus();
+            }
+          });
+        }
+
+        // Scroll-reveal (progressive enhancement — content is visible by default without JS)
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && revealEls.length) {
+          if (reduceMotion) {
+            revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+          } else {
+            var revealObserver = new IntersectionObserver(function (entries, obs) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  obs.unobserve(entry.target);
+                }
+              });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(function (el) { revealObserver.observe(el); });
           }
-        });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+        }
+
+        // Active section highlighting in nav
+        var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id], .hero[id]'));
+        var navLinks = document.querySelectorAll('.nav-link');
+        if ('IntersectionObserver' in window && sections.length && navLinks.length) {
+          var navObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                var id = entry.target.getAttribute('id');
+                navLinks.forEach(function (link) {
+                  link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                });
+              }
+            });
+          }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+          sections.forEach(function (sec) { navObserver.observe(sec); });
+        }
       })();
     </script>
 </body>
