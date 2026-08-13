@@ -3,660 +3,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dean Reight F. Billedo // Portfolio</title>
+    <title>Dean Reight Billedo — Software Developer, Zamboanga City</title>
+    <meta name="description" content="Dean Reight Billedo — software developer in Zamboanga City, PH. Web development, custom software, and AI/ML integration through Billedo Software Development Services.">
     <link rel="icon" href="images/favicon.ico.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="style_nge.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<body class="dark-mode">
-    <!-- Progress Bar -->
-    <div class="progress-container">
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="progress-container" aria-hidden="true">
         <div class="progress-bar" id="progressBar"></div>
     </div>
-    
-    <!-- Navigation new mac -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">Dean Reight</div>
-             <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link">Home</a></li>
-                <li><a href="#achievements" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+
+    <header class="navbar">
+        <input type="checkbox" id="menuToggle" class="menu-checkbox">
+        <div class="nav-bar-row">
+            <a href="#hero" class="nav-brand">Dean Billedo</a>
+            <div class="nav-bar-actions">
+                <a href="assets/Dean-Billedo-CV.pdf" class="btn-cv-mini" download>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                    CV
+                </a>
+                <label for="menuToggle" class="menu-btn" id="menuBtn" role="button" tabindex="0" aria-controls="navPanel" aria-expanded="false" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
+        </div>
+        <nav class="nav-panel" id="navPanel" aria-label="Primary">
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Intro</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#achievements" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <!-- Theme toggle removed for NGE theme -->
-            <!-- <button class="theme-toggle" id="themeToggle">
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"/>
-                    <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button> -->
-        </div>
-    </nav>
-    
-    <div class="main-container">
-        <!-- Hero Section -->
-     <section class="hero-section section" id="hero">
-            <div class="hero-content">
-                <div class="mac-window">
-                    <div class="mac-titlebar">
-                        <div class="mac-controls">
-                            <div class="mac-control close"></div>
-                            <div class="mac-control minimize"></div>
-                            <div class="mac-control maximize"></div>
-                        </div>
-                        <div class="mac-title">MAGI SYSTEM : CASPER-3</div>
-                    </div>
-                    
-                    <div class="mac-content">
-                        <div class="terminal-header">
-                            <span class="terminal-prompt">NERV_TERMINAL_01</span>
-                            <span class="terminal-path">/ACCESS/PERSONNEL/DEAN_REIGHT</span>
-                        </div>
-                        
-                        <div class="hero-text">
-                            <h1 class="hero-name">Dean Reight F. Billedo</h1>
-                            <p class="hero-tagline">Computer Science Student & Developer</p>
-                            <p class="hero-description">$ echo "Just keep learning" ;<span class="typing-cursor"></span></p>
-                        </div>
-<!--                         
-                        <div class="hero-metrics">
-                            <div class="metric-card">
-                                <div class="metric-icon">🧩</div>
-                                <div class="metric-label">Problem Solver</div>
+            <div class="nav-panel-ctas">
+                <a href="assets/Dean-Billedo-CV.pdf" class="btn btn-outline" download>Download CV</a>
+                <a href="#hire" class="btn btn-primary">Hire me</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container" id="main-content">
+
+        <!-- Introduction -->
+        <section class="hero" id="hero" aria-labelledby="hero-heading">
+            <p class="eyebrow"><span class="eyebrow-index">00</span> Introduction</p>
+            <h1 id="hero-heading" class="hero-heading">Dean Reight <em>Billedo</em></h1>
+            <p class="hero-role">Software developer &amp; founder of <span class="brand-inline">Billedo Software Development Services</span></p>
+            <p class="hero-lead">I design and build web applications, custom software, and AI-assisted tools for small teams and individuals — grounded in published research on retrieval-augmented generation.</p>
+
+            <p class="status-line"><span class="status-dot" aria-hidden="true"></span>Available for freelance work — usually replies within a day</p>
+
+            <div class="hero-actions">
+                <a href="assets/Dean-Billedo-CV.pdf" class="btn btn-primary" download>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                    Download CV
+                </a>
+                <a href="#contact" class="btn btn-text">Get in touch <span aria-hidden="true">→</span></a>
+            </div>
+
+            <p class="hero-meta">Zamboanga City, Philippines · B.S. Computer Science, Western Mindanao State University · IEEE-published thesis, ICCIAA 2026</p>
+        </section>
+
+        <!-- Services -->
+        <section class="section" id="services" aria-labelledby="services-heading">
+            <div class="section-grid">
+                <header class="section-head">
+                    <p class="eyebrow"><span class="eyebrow-index">01</span> Services</p>
+                    <h2 id="services-heading" class="section-title">What I can build for you</h2>
+                    <p class="section-lead">Billedo Software Development Services — freelance work on the same stack behind the projects in this portfolio.</p>
+                </header>
+
+                <div class="section-body">
+                    <ol class="services-list">
+                        <li class="service-row">
+                            <div class="service-row-head">
+                                <span class="service-num">01</span>
+                                <h3 class="service-title">Web Development</h3>
                             </div>
-                            <div class="metric-card">
-                                <div class="metric-icon">💡</div>
-                                <div class="metric-label">Innovative</div>
+                            <div class="service-row-body">
+                                <p class="service-desc">Business websites, landing pages, and full-stack web applications — designed, built, and deployed end to end.</p>
+                                <ul class="service-includes">
+                                    <li>Responsive marketing &amp; business sites</li>
+                                    <li>Full-stack web apps, front end to database</li>
+                                    <li>Ongoing maintenance &amp; performance fixes</li>
+                                </ul>
+                                <p class="service-stack"><span class="stack-label">Stack</span> HTML/CSS/JS, React, Next.js, PHP, Laravel</p>
+                                <a class="service-cta" href="mailto:deanbilledo@gmail.com?subject=Web%20Development%20Inquiry">Request a quote <span aria-hidden="true">→</span></a>
                             </div>
-                            <div class="metric-card">
-                                <div class="metric-icon">🎯</div>
-                                <div class="metric-label">Persistent</div>
+                        </li>
+
+                        <li class="service-row">
+                            <div class="service-row-head">
+                                <span class="service-num">02</span>
+                                <h3 class="service-title">Custom Software Development</h3>
                             </div>
-                        </div> -->
-                        
-                        <div class="hero-bio">
-                            <p>Hello I am Dean, a computer science student at Western Mindanao State University. 
-                            I like to sleep a lot, I also like to play games, and I like to learn interesting things.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+                            <div class="service-row-body">
+                                <p class="service-desc">Purpose-built tools, internal systems, and automation that fit how you actually work.</p>
+                                <ul class="service-includes">
+                                    <li>Internal tools &amp; admin systems</li>
+                                    <li>Task automation &amp; scripting</li>
+                                    <li>Database-driven applications</li>
+                                </ul>
+                                <p class="service-stack"><span class="stack-label">Stack</span> Python, Java, C++, MySQL, Firebase</p>
+                                <a class="service-cta" href="mailto:deanbilledo@gmail.com?subject=Custom%20Software%20Inquiry">Request a quote <span aria-hidden="true">→</span></a>
+                            </div>
+                        </li>
 
-  <!-- Projects Section -->
-        <section class="section" id="projects">
-            <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Notable system builds and experiments</p>
-            </div>
+                        <li class="service-row">
+                            <div class="service-row-head">
+                                <span class="service-num">03</span>
+                                <h3 class="service-title">AI/ML Integration</h3>
+                            </div>
+                            <div class="service-row-body">
+                                <p class="service-desc">Document search, retrieval-augmented generation, and AI-assisted features grounded in published research work.</p>
+                                <ul class="service-includes">
+                                    <li>RAG &amp; document-search pipelines</li>
+                                    <li>LLM-powered features &amp; chat tools</li>
+                                    <li>Computer-vision integrations</li>
+                                </ul>
+                                <p class="service-stack"><span class="stack-label">Stack</span> LangChain, FAISS, Streamlit, Ollama, OpenCV</p>
+                                <a class="service-cta" href="mailto:deanbilledo@gmail.com?subject=AI%2FML%20Integration%20Inquiry">Request a quote <span aria-hidden="true">→</span></a>
+                            </div>
+                        </li>
+                    </ol>
 
-            <div class="projects-grid">
-                <!-- Thesis project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/thesis1.png" alt="Thesis RAG System" class="project-screenshot" id="thesisImage">
-                        <div class="project-status in-progress">In Progress</div>
+                    <div class="process-block">
+                        <h3 class="process-heading">How a project runs</h3>
+                        <ol class="process-list">
+                            <li><h4>Discovery</h4><p>We talk through what you need, your timeline, and your budget.</p></li>
+                            <li><h4>Build &amp; iterate</h4><p>I develop in stages and share progress, so there are no surprises.</p></li>
+                            <li><h4>Launch &amp; support</h4><p>You get a working, deployed product — plus support after handoff.</p></li>
+                        </ol>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Thesis-RAG-Optimized-Procurement-Documents-Using Small-language-Model</h3>
-                        <p class="project-description">Our thesis project focuses on developing an offline-capable system that allows users to search and analyze public procurement documents in PDF format using Artificial Intelligence.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">FAISS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Pet Care Connect project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/pcc1.jpg" alt="Pet Care Connect System" class="project-screenshot" id="petcareImage">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pet Care Connect</h3>
-                        <p class="project-description">A web-based platform that connects pet owners with local veterinary and grooming services through a centralized, user-friendly appointment system.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="http://www.petcareconnect.site" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/PetCareConnect" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DreamPC project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/dream1.png" alt="DreamPC System" class="project-screenshot" id="dreampcImage">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">DreamPC</h3>
-                        <p class="project-description">A comprehensive PC building and customization platform that helps users design their dream computer setup with compatibility checking and price optimization.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link primary">View Demo</a>
-                            <a href="#" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- cyberpunk theme portfolio project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/punk1.png" alt="Cyberpunk Portfolio" class="project-screenshot" id="cyberpunkImage">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Cyberpunk Portfolio</h3>
-                        <p class="project-description">A futuristic neon-themed portfolio website featuring glitch effects, holographic elements, and cyber-inspired UI components. Built with modern web technologies and animated transitions.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">GSAP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="/cyber/index.html" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/cyber" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- background remover -->
-                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/bgrem1.png" alt="Background Remover" class="project-screenshot" id="backgrounremoverImage">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Background Remover</h3>
-                        <p class="project-description">An AI-powered web tool for automatic background removal from images. Features drag-and-drop functionality, real-time processing, and instant downloads with professional-quality results.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PYTHON</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="/bgrem/index.html" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/bgremover" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- slide controller remover -->
-                 <div class="project-card">
-                    <div class="project-image">
-                       <img id="handImage" src="images/hand1.png" alt="Hand Project" class="project-screenshot">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Hand Gesture Controlled Presentation tools</h3>
-                        <p class="project-description">A presentation control system that uses computer vision to recognize hand gestures for navigating PowerPoint slides. Built with OpenCV for gesture detection and Aspose.Slides for seamless presentation management.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PYTHON</span>
-                            <span class="tech-tag">ASPOSE SLIDES</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="/bgrem/index.html" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/bgremover" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Campo Vida project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/campo.png" alt="Campo Vida" class="project-screenshot" id="campovidaImage">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Campo Vida</h3>
-                        <p class="project-description">A modern real estate landing page showcasing luxury properties with elegant design, smooth animations, and responsive layouts. Features property galleries, interactive maps, and contact forms for potential buyers.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="/campovida/index.html" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/campovida" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Manila Tour project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/mnl.png" alt="Manila Tour" class="project-screenshot" id="mnltourImage">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Manila Tour Guide</h3>
-                        <p class="project-description">An interactive travel guide for Manila featuring popular tourist destinations, cultural landmarks, and local attractions. Includes photo galleries, location information, and travel tips for visitors exploring the city.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="/mnltour/index.html" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/mnltour" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Rotaract project -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/rot.png" alt="Rotaract North" class="project-screenshot" id="rotaractImage">
-                        <div class="project-status completed">Completed</div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Rotaract Club North Website</h3>
-                        <p class="project-description">Official website for Rotaract Club North featuring event galleries, club information, and community service initiatives. Built with modern web technologies to showcase club activities and engage members.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="/rotaract/index.html" class="project-link primary">View Demo</a>
-                            <a href="https://github.com/deanbilledo/rotaract" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section class="section" id="skills">
-            <div class="section-header">
-                <h2 class="section-title">Skills</h2>
-                <p class="section-subtitle">My core competencies and tools</p>
-            </div>
-            
-            <div class="skills-container">
-                <!-- ...existing code... -->
-
-<div class="skill-category">
-    <h3 class="skill-category-title">Programming Languages</h3>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/python.svg" alt="Python" width="40" height="40">
-            </div>
-            <span class="skill-name">Python</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/js.svg" alt="JavaScript" width="40" height="40">
-            </div>
-            <span class="skill-name">JavaScript</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/java.svg" alt="Java" width="40" height="40">
-            </div>
-            <span class="skill-name">Java</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/c++.svg" alt="C++" width="40" height="40">
-            </div>
-            <span class="skill-name">C++</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/php.svg" alt="PHP" width="40" height="40">
-            </div>
-            <span class="skill-name">PHP</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/sql.svg" alt="SQL" width="40" height="40">
-            </div>
-            <span class="skill-name">SQL</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/csharp.svg" alt="C#" width="40" height="40">
-            </div>
-            <span class="skill-name">C#</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/asm.svg" alt="Assembly" width="40" height="40">
-            </div>
-            <span class="skill-name">Assembly</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/matlab.svg" alt="Matlab" width="40" height="40">
-            </div>
-            <span class="skill-name">Matlab</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/bash.svg" alt="Bash" width="40" height="40">
-            </div>
-            <span class="skill-name">Bash</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-category">
-    <h3 class="skill-category-title">Frontend Development</h3>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/html.svg" alt="HTML/CSS" width="40" height="40">
-            </div>
-            <span class="skill-name">HTML5 / CSS3</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/react.svg" alt="React" width="40" height="40">
-            </div>
-            <span class="skill-name">React.js</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/tailwin.svg" alt="Tailwind" width="40" height="40">
-            </div>
-            <span class="skill-name">Tailwind CSS</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/laravel.svg" alt="Laravel" width="40" height="40">
-            </div>
-            <span class="skill-name">Laravel</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">📱</div>
-            <span class="skill-name">Responsive Design</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/bootstrap.svg" alt="Bootstrap" width="40" height="40">
-            </div>
-            <span class="skill-name">Bootstrap</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/figma.svg" alt="Figma" width="40" height="40">
-            </div>
-            <span class="skill-name">Figma</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/nextjs.svg" alt="Next.js" width="40" height="40">
-            </div>
-            <span class="skill-name">Next.js</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/vue.svg" alt="Vue.js" width="40" height="40">
-            </div>
-            <span class="skill-name">Vue.js</span>
-        </div>   
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/webpack.svg" alt="Webpack" width="40" height="40">
-            </div>
-            <span class="skill-name">Webpack</span>
-        </div>
-    </div>
-</div>
-
-<div class="skill-category">
-    <h3 class="skill-category-title">Tools & Technologies</h3>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/git.svg" alt="Git" width="40" height="40">
-            </div>
-            <span class="skill-name">Git</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/github.svg" alt="GitHub" width="40" height="40">
-            </div>
-            <span class="skill-name">GitHub</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/mysql.svg" alt="MySQL" width="40" height="40">
-            </div>
-            <span class="skill-name">MySQL</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/Streamlit.svg" alt="Streamlit" width="40" height="40">
-            </div>
-            <span class="skill-name">Streamlit</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/flutterflow.svg" alt="FlutterFlow" width="40" height="40">
-            </div>
-            <span class="skill-name">Flutterflow</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/firebase.svg" alt="Firebase" width="40" height="40">
-            </div>
-            <span class="skill-name">Firebase</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/xampp.svg" alt="XAMPP" width="40" height="40">
-            </div>
-            <span class="skill-name">XAMPP</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/docker.svg" alt="Docker" width="40" height="40">
-            </div>
-            <span class="skill-name">Docker</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">
-                <img src="svg/ollama.svg" alt="Ollama" width="40" height="40">
-            </div>
-            <span class="skill-name">Ollama</span>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">🤖</div>
-            <span class="skill-name">AI/ML Libraries</span>
-        </div>
-    </div>
-</div>
-
-<!-- ...rest of existing code... -->
-            </div>
-        </section>
-
-         <!-- About Section -->
-        <section class="section" id="achievements">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Getting to know Dean beyond the code</p>
-            </div>
-            
-            <div class="bento-grid">
-                <div class="bento-card large">
-                    <div class="bento-content">
-                        <span class="bento-icon">👨‍💻</span>
-                        <h3>My Journey</h3>
-                        <p>Started my programming journey in 2022 when I entered Western Mindanao State university. What began as curiosity about how websites work has evolved into a passion for creating meaningful digital solutions. I love the problem-solving aspect of coding and the satisfaction of building something from scratch.</p>
-                        <span class="bento-date">2022 - Present</span>
-                    </div>
-                </div>
-                
-                <div class="bento-card">
-                    <div class="bento-content">
-                        <span class="bento-icon">🎮</span>
-                        <h3>Gaming Enthusiast</h3>
-                        <p>When I'm not coding, you'll find me gaming. I enjoy strategy games - they actually help improve my problem-solving skills!</p>
-                    </div>
-                </div>
-                
-                <div class="bento-card">
-                    <div class="bento-content">
-                        <span class="bento-icon">😴</span>
-                        <h3>Sleep Lover</h3>
-                        <p>I believe in the power of good rest. Quality sleep helps me stay focused and creative when tackling complex coding challenges.</p>
-                    </div>
-                </div>
-                
-                <div class="bento-card tall">
-                    <div class="bento-content">
-                        <span class="bento-icon">🔬</span>
-                        <h3>Research Mindset</h3>
-                        <p>Currently working on my thesis involving AI and document processing. I love diving deep into emerging technologies and understanding how they can solve real-world problems. Always curious about the "how" and "why" behind everything.</p>
-                        <span class="bento-date">Academic Focus</span>
-                    </div>
-                </div>
-                
-                <div class="bento-card">
-                    <div class="bento-content">
-                        <span class="bento-icon">🌱</span>
-                        <h3>Continuous Learner</h3>
-                        <p>Technology evolves fast, and I love keeping up. Always exploring new frameworks, languages, and development approaches.</p>
-                    </div>
-                </div>
-                
-                <div class="bento-card">
-                    <div class="bento-content">
-                        <span class="bento-icon">🏫</span>
-                        <h3>WMSU Student</h3>
-                        <p>Studying Computer Science at Western Mindanao State University, balancing academic theory with practical project development.</p>
-                    </div>
-                </div>
-                
-                <div class="bento-card">
-                    <div class="bento-content">
-                        <span class="bento-icon">💡</span>
-                        <h3>Creative Problem Solver</h3>
-                        <p>I approach challenges with curiosity and persistence. Every bug is a puzzle waiting to be solved, every feature a chance to innovate.</p>
-                    </div>
-                </div>
-                
-                <div class="bento-card">
-                    <div class="bento-content">
-                        <span class="bento-icon">🎯</span>
-                        <h3>Future Goals</h3>
-                        <p>Aspiring to work in AI/ML development and contribute to projects that make technology more accessible and useful for everyone.</p>
+                    <div class="hire-block" id="hire">
+                        <p class="eyebrow"><span class="eyebrow-index">→</span> Start a project</p>
+                        <h3>Have something in mind?</h3>
+                        <p>Tell me what you're trying to build — I'll reply with next steps and a rough estimate.</p>
+                        <a class="btn btn-primary" href="mailto:deanbilledo@gmail.com?subject=Project%20Inquiry%20-%20Billedo%20Software%20Development%20Services">Email me about your project</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Work -->
+        <section class="section" id="projects" aria-labelledby="work-heading">
+            <div class="section-grid">
+                <header class="section-head">
+                    <p class="eyebrow"><span class="eyebrow-index">02</span> Work</p>
+                    <h2 id="work-heading" class="section-title">Selected projects</h2>
+                    <p class="section-lead">Nine builds, from a published thesis to freelance client sites. Newest first.</p>
+                </header>
 
-        <!-- Contact Section -->
-        <section class="section" id="contact">
-            <div class="section-header">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Ready to collaborate? Let's connect.</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get in touch</h3>
-                    <div class="contact-links">
-                        <a href="mailto:deanreight@gmail.com" class="contact-link">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            deanbilledo@gmail.com
-                        </a>
-                        <a href="https://github.com/deanbilledo" class="contact-link">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                            </svg>
-                            GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/reighling" class="contact-link">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                <rect x="2" y="9" width="4" height="12"/>
-                                <circle cx="4" cy="4" r="2"/>
-                            </svg>
-                            LinkedIn
-                        </a>
-                         <a href="https://www.facebook.com/reigh.billedo/" class="contact-link">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                            </svg>
-                            Facebook
-                        </a>
-                        <a href="https://steamcommunity.com/profiles/76561199810066367/" class="contact-link">
-                            <img src="svg/steam.svg" alt="Steam" width="24" height="24">
-                            Steam
-                        </a>
-                    </div>
+                <div class="section-body">
+                    <ul class="work-list">
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/thesis1.png" alt="Thesis RAG System" class="project-screenshot" id="thesisImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">RAG-Optimized Procurement Documents Using a Small Language Model</h3>
+                                <p class="project-description">An offline-capable system that lets users search and analyze public procurement documents in PDF format using AI. Published thesis work, presented at ICCIAA 2026.</p>
+                                <p class="project-tech"><span class="tech-tag">PUBLISHED</span><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span><span class="tech-tag">LangChain</span><span class="tech-tag">FAISS</span></p>
+                                <div class="project-links">
+                                    <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/Thesis-RAG-Optimized-Procurement-Documents-Public" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/pcc1.jpg" alt="Pet Care Connect System" class="project-screenshot" id="petcareImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">Pet Care Connect</h3>
+                                <p class="project-description">A web-based platform connecting pet owners with local veterinary and grooming services through a centralized appointment system.</p>
+                                <p class="project-tech"><span class="tech-tag">Laravel</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Hostinger</span><span class="tech-tag">PHP</span></p>
+                                <div class="project-links">
+                                    <a href="http://www.petcareconnect.site" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/PetCareConnect" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/dream1.png" alt="DreamPC System" class="project-screenshot" id="dreampcImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">DreamPC</h3>
+                                <p class="project-description">A PC building and customization platform that helps users design a build with compatibility checking and price optimization.</p>
+                                <p class="project-tech"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PHP</span></p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link primary">View demo</a>
+                                    <a href="#" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/punk1.png" alt="Cyberpunk Portfolio" class="project-screenshot" id="cyberpunkImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">Cyberpunk Portfolio</h3>
+                                <p class="project-description">A neon-themed portfolio site with glitch effects, holographic elements, and cyber-inspired UI components.</p>
+                                <p class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">GSAP</span></p>
+                                <div class="project-links">
+                                    <a href="/cyber/index.html" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/cyber" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/bgrem1.png" alt="Background Remover" class="project-screenshot" id="backgrounremoverImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">Background Remover</h3>
+                                <p class="project-description">An AI-powered tool for automatic background removal, with drag-and-drop upload, real-time processing, and instant download.</p>
+                                <p class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Python</span></p>
+                                <div class="project-links">
+                                    <a href="/bgrem/index.html" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/bgremover" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img id="handImage" src="images/hand1.png" alt="Hand Gesture Presentation Tool" class="project-screenshot">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">Hand Gesture Controlled Presentation Tools</h3>
+                                <p class="project-description">A presentation control system using computer vision to recognize hand gestures for navigating slides, built with OpenCV and Aspose.Slides.</p>
+                                <p class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Python</span><span class="tech-tag">Aspose.Slides</span></p>
+                                <div class="project-links">
+                                    <a href="/bgrem/index.html" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/bgremover" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/campo.png" alt="Campo Vida" class="project-screenshot" id="campovidaImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">Campo Vida</h3>
+                                <p class="project-description">A real estate landing page for luxury properties, with property galleries, interactive maps, and buyer contact forms.</p>
+                                <p class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span></p>
+                                <div class="project-links">
+                                    <a href="/campovida/index.html" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/campovida" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/mnl.png" alt="Manila Tour Guide" class="project-screenshot" id="mnltourImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">Manila Tour Guide</h3>
+                                <p class="project-description">An interactive travel guide to Manila's landmarks and attractions, with photo galleries and location details.</p>
+                                <p class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span></p>
+                                <div class="project-links">
+                                    <a href="/mnltour/index.html" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/mnltour" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-card">
+                            <div class="project-image">
+                                <img src="images/rot.png" alt="Rotaract Club North" class="project-screenshot" id="rotaractImage">
+                            </div>
+                            <div class="project-content">
+                                <p class="project-status completed"><span class="status-dot" aria-hidden="true"></span>Completed</p>
+                                <h3 class="project-title">Rotaract Club North Website</h3>
+                                <p class="project-description">Official site for Rotaract Club of Zamboanga City North, with event galleries and club information. Sole developer, build to deployment.</p>
+                                <p class="project-tech"><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span></p>
+                                <div class="project-links">
+                                    <a href="/rotaract/index.html" class="project-link primary">View demo</a>
+                                    <a href="https://github.com/deanbilledo/rotaract" class="project-link">Source code</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
                 </div>
-                
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqabkplo" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                    <div id="formStatus"></div>
-                </form>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© <span id="currentYear"></span> Dean Reight F. Billedo. All rights reserved.</p>
-        </footer>
-    </div>
+        <!-- Skills -->
+        <section class="section" id="skills" aria-labelledby="skills-heading">
+            <div class="section-grid">
+                <header class="section-head">
+                    <p class="eyebrow"><span class="eyebrow-index">03</span> Skills</p>
+                    <h2 id="skills-heading" class="section-title">Toolkit</h2>
+                    <p class="section-lead">Languages and tools I use most, grouped by where they show up in a project.</p>
+                </header>
 
-    <!-- Scroll to Top Button -->
+                <div class="section-body">
+                    <div class="skills-body">
+                        <div class="skill-group">
+                            <h3 class="skill-group-title">Languages</h3>
+                            <ul class="skill-items">
+                                <li class="skill-item"><img src="svg/python.svg" alt="" class="skill-glyph">Python</li>
+                                <li class="skill-item"><img src="svg/js.svg" alt="" class="skill-glyph">JavaScript</li>
+                                <li class="skill-item"><img src="svg/java.svg" alt="" class="skill-glyph">Java</li>
+                                <li class="skill-item"><img src="svg/c++.svg" alt="" class="skill-glyph">C++</li>
+                                <li class="skill-item"><img src="svg/php.svg" alt="" class="skill-glyph">PHP</li>
+                                <li class="skill-item"><img src="svg/sql.svg" alt="" class="skill-glyph">SQL</li>
+                                <li class="skill-item"><img src="svg/csharp.svg" alt="" class="skill-glyph">C#</li>
+                                <li class="skill-item"><img src="svg/asm.svg" alt="" class="skill-glyph">Assembly</li>
+                                <li class="skill-item"><img src="svg/matlab.svg" alt="" class="skill-glyph">Matlab</li>
+                                <li class="skill-item"><img src="svg/bash.svg" alt="" class="skill-glyph">Bash</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-group">
+                            <h3 class="skill-group-title">Frontend</h3>
+                            <ul class="skill-items">
+                                <li class="skill-item"><img src="svg/html.svg" alt="" class="skill-glyph">HTML5 / CSS3</li>
+                                <li class="skill-item"><img src="svg/react.svg" alt="" class="skill-glyph">React.js</li>
+                                <li class="skill-item"><img src="svg/tailwin.svg" alt="" class="skill-glyph">Tailwind CSS</li>
+                                <li class="skill-item"><img src="svg/laravel.svg" alt="" class="skill-glyph">Laravel</li>
+                                <li class="skill-item">Responsive design</li>
+                                <li class="skill-item"><img src="svg/bootstrap.svg" alt="" class="skill-glyph">Bootstrap</li>
+                                <li class="skill-item"><img src="svg/figma.svg" alt="" class="skill-glyph">Figma</li>
+                                <li class="skill-item"><img src="svg/nextjs.svg" alt="" class="skill-glyph">Next.js</li>
+                                <li class="skill-item"><img src="svg/vue.svg" alt="" class="skill-glyph">Vue.js</li>
+                                <li class="skill-item"><img src="svg/webpack.svg" alt="" class="skill-glyph">Webpack</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-group">
+                            <h3 class="skill-group-title">Tools &amp; platforms</h3>
+                            <ul class="skill-items">
+                                <li class="skill-item"><img src="svg/git.svg" alt="" class="skill-glyph">Git</li>
+                                <li class="skill-item"><img src="svg/github.svg" alt="" class="skill-glyph">GitHub</li>
+                                <li class="skill-item"><img src="svg/mysql.svg" alt="" class="skill-glyph">MySQL</li>
+                                <li class="skill-item"><img src="svg/Streamlit.svg" alt="" class="skill-glyph">Streamlit</li>
+                                <li class="skill-item"><img src="svg/flutterflow.svg" alt="" class="skill-glyph">FlutterFlow</li>
+                                <li class="skill-item"><img src="svg/firebase.svg" alt="" class="skill-glyph">Firebase</li>
+                                <li class="skill-item"><img src="svg/xampp.svg" alt="" class="skill-glyph">XAMPP</li>
+                                <li class="skill-item"><img src="svg/docker.svg" alt="" class="skill-glyph">Docker</li>
+                                <li class="skill-item"><img src="svg/ollama.svg" alt="" class="skill-glyph">Ollama</li>
+                                <li class="skill-item">AI/ML libraries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="achievements" aria-labelledby="about-heading">
+            <div class="section-grid">
+                <header class="section-head">
+                    <p class="eyebrow"><span class="eyebrow-index">04</span> About</p>
+                    <h2 id="about-heading" class="section-title">Beyond the code</h2>
+                    <p class="section-lead">A few things worth knowing about how I work and what I'm chasing next.</p>
+                </header>
+
+                <div class="section-body">
+                    <div class="about-body">
+                        <div class="about-note about-note--wide">
+                            <h3>My journey</h3>
+                            <p>Started my programming journey in 2022 when I entered Western Mindanao State University. What began as curiosity about how websites work has evolved into a passion for creating meaningful digital solutions.</p>
+                            <p class="about-note-meta">2022 — present</p>
+                        </div>
+                        <div class="about-note">
+                            <h3>Research mindset</h3>
+                            <p>My IEEE-published thesis involved AI and document processing. I like diving into emerging technologies and understanding how they solve real problems.</p>
+                        </div>
+                        <div class="about-note">
+                            <h3>WMSU graduate</h3>
+                            <p>B.S. Computer Science from Western Mindanao State University, balancing academic theory with practical project work.</p>
+                        </div>
+                        <div class="about-note">
+                            <h3>Gaming, in moderation</h3>
+                            <p>Strategy games, mostly — they scratch the same problem-solving itch as debugging.</p>
+                        </div>
+                        <div class="about-note">
+                            <h3>A believer in good rest</h3>
+                            <p>Quality sleep keeps me focused and creative when tackling complex problems.</p>
+                        </div>
+                        <div class="about-note">
+                            <h3>What's next</h3>
+                            <p>Growing Billedo Software Development Services and contributing to more AI/ML projects that make technology genuinely useful.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact" aria-labelledby="contact-heading">
+            <div class="section-grid">
+                <header class="section-head">
+                    <p class="eyebrow"><span class="eyebrow-index">05</span> Contact</p>
+                    <h2 id="contact-heading" class="section-title">Let's talk</h2>
+                    <p class="section-lead">For freelance or service inquiries, email works best — I check it daily.</p>
+                </header>
+
+                <div class="section-body">
+                    <div class="contact-columns">
+                        <div class="contact-info">
+                            <ul class="contact-links">
+                                <li><a href="mailto:deanbilledo@gmail.com" class="contact-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                    <span>deanbilledo@gmail.com</span>
+                                </a></li>
+                                <li><a href="https://github.com/deanbilledo" class="contact-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                    <span>GitHub — deanbilledo</span>
+                                </a></li>
+                                <li><a href="https://linkedin.com/in/reighling" class="contact-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                    <span>LinkedIn</span>
+                                </a></li>
+                                <li><a href="https://www.facebook.com/reigh.billedo/" class="contact-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                                    <span>Facebook</span>
+                                </a></li>
+                                <li><a href="https://steamcommunity.com/profiles/76561199810066367/" class="contact-link">
+                                    <img src="svg/steam.svg" alt="" class="contact-link-glyph">
+                                    <span>Steam</span>
+                                </a></li>
+                                <li><a href="assets/Dean-Billedo-CV.pdf" class="contact-link" download>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+                                    <span>Download CV (PDF)</span>
+                                </a></li>
+                            </ul>
+                        </div>
+
+                        <div class="contact-divider" aria-hidden="true"></div>
+
+                        <div class="contact-form-wrap">
+                            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqabkplo" method="POST">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required autocomplete="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Send message</button>
+                                <div id="formStatus" role="status" aria-live="polite"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-brand">Billedo Software Development Services</p>
+            <p class="footer-desc">Web development, custom software, and AI/ML integration — Zamboanga City, PH.</p>
+            <p class="footer-rights">© <span id="currentYear"></span> Dean Reight F. Billedo. All rights reserved.</p>
+        </div>
+    </footer>
+
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M18 15l-6-6-6 6"/>
         </svg>
     </button>
 
     <script src="script.js"></script>
+    <script>
+      (function () {
+        var toggle = document.getElementById('menuToggle');
+        var btn = document.getElementById('menuBtn');
+        var panel = document.getElementById('navPanel');
+        if (!toggle || !btn || !panel) return;
+
+        function setExpanded() {
+          btn.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false');
+        }
+        toggle.addEventListener('change', setExpanded);
+        btn.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle.checked = !toggle.checked;
+            setExpanded();
+          }
+        });
+        panel.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            toggle.checked = false;
+            setExpanded();
+          });
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && toggle.checked) {
+            toggle.checked = false;
+            setExpanded();
+            btn.focus();
+          }
+        });
+      })();
+    </script>
 </body>
 </html>
